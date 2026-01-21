@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText } from 'lucide-react';
+import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles } from 'lucide-react';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
+import reginaPortrait from '@/assets/regina-portrait.png';
 
 interface Achievement {
   icon: React.ElementType;
@@ -115,6 +116,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Une mémoire vivante au service de la culture, de l'histoire et de l'identité des peuples."
+  },
+  {
+    name: "Regina Fonyuy Wirba",
+    role: "Représentante Pays • Cameroun • Communauté Nso'",
+    portrait: reginaPortrait,
+    bio: [
+      "L'honorable Reine mère Regina Fonyuy Wirba est une infirmière anesthésiste engagée et une figure communautaire respectée, originaire de Jakiri, au sein de la communauté Nso'. Elle conjugue expertise professionnelle en santé et engagement communautaire au service du bien-être et de l'autonomisation des femmes.",
+      "En reconnaissance de son dévouement et de son rôle fédérateur, elle a été honorée du titre de « Reine Mère de Bongkisheri Douala », une distinction symbolisant sa sagesse, son sens du service et son influence positive au sein de la communauté."
+    ],
+    achievements: [
+      {
+        icon: Stethoscope,
+        title: "Infirmière Anesthésiste",
+        description: "Expertise professionnelle en santé au service du bien-être communautaire"
+      },
+      {
+        icon: Crown,
+        title: "Reine Mère Mbinkar",
+        description: "Titre honorifique de Reine Mère de Bongkisheri Douala pour son leadership"
+      },
+      {
+        icon: Users,
+        title: "Association Femmes Nso'",
+        description: "Présidente 2015-2021 de l'Association des Femmes Nso' de Bongkisheri Douala"
+      },
+      {
+        icon: Sparkles,
+        title: "ASMADLA",
+        description: "Membre du Bureau exécutif de l'Association Mandjara de Douala"
+      }
+    ],
+    quote: "Un engagement profond en faveur de la santé, de la dignité humaine et de la transmission des valeurs culturelles."
   }
 ];
 
