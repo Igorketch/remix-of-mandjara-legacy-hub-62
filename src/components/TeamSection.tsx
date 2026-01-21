@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin } from 'lucide-react';
+import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText } from 'lucide-react';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
+import ncharePortrait from '@/assets/nchare-portrait.png';
 
 interface Achievement {
   icon: React.ElementType;
@@ -82,6 +83,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Promouvoir l'amour du prochain, la solidarité et les échanges d'expériences culturelles pour un impact social durable."
+  },
+  {
+    name: "Monsieur Ncharé Oumarou",
+    role: "Conseiller • Comité des Sages",
+    portrait: ncharePortrait,
+    bio: [
+      "Figure majeure de la préservation et de la transmission du patrimoine culturel Bamoun, Monsieur Ncharé Oumarou occupe le poste de Directeur des Affaires administratives et culturelles du Palais des Rois Bamoun, où il œuvre depuis plusieurs décennies à la sauvegarde et à la diffusion de l'héritage historique du Royaume Bamoun.",
+      "Linguiste, archiviste et muséologue, il est reconnu comme spécialiste de l'écriture Shu-Mom et des langues inventées par le Roi Njoya. Co-traducteur du Saint Coran en langue bamoun, il contribue à la transmission intergénérationnelle des savoirs Bamoun."
+    ],
+    achievements: [
+      {
+        icon: Crown,
+        title: "Palais des Rois Bamoun",
+        description: "Directeur des Affaires administratives et culturelles depuis plusieurs décennies"
+      },
+      {
+        icon: Languages,
+        title: "Écriture Shu-Mom",
+        description: "Spécialiste des langues inventées par le Roi Njoya et traducteur du Coran en bamoun"
+      },
+      {
+        icon: BookOpen,
+        title: "Archiviste & Muséologue",
+        description: "Conservation et interprétation des manuscrits royaux du Royaume Bamoun"
+      },
+      {
+        icon: ScrollText,
+        title: "Comité des Sages",
+        description: "Conseiller apportant expertise historique et sagesse aux orientations de l'organisation"
+      }
+    ],
+    quote: "Une mémoire vivante au service de la culture, de l'histoire et de l'identité des peuples."
   }
 ];
 
