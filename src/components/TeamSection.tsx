@@ -86,7 +86,7 @@ const teamMembers: TeamMember[] = [
     quote: "Promouvoir l'amour du prochain, la solidarité et les échanges d'expériences culturelles pour un impact social durable."
   },
   {
-    name: "Monsieur Ncharé Oumarou",
+    name: "NJI Ncharé Oumarou",
     role: "Conseiller • Comité des Sages",
     portrait: ncharePortrait,
     bio: [
