@@ -74,7 +74,7 @@ export const HeroSection = () => {
           delay: 0.7
         }} className="text-heritage-cream/80 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
             Préserver et transmettre le patrimoine culturel, historique et social 
-            des peuples <strong className="text-heritage-gold">Bafia</strong>, <strong className="text-heritage-gold">Bafia</strong> et <strong className="text-heritage-gold">Nso'</strong>
+            des peuples <strong className="text-heritage-gold">Bamoun</strong>, <strong className="text-heritage-gold">Bafia</strong> et <strong className="text-heritage-gold">Nso'</strong>
           </motion.p>
 
           {/* CTA Buttons */}
