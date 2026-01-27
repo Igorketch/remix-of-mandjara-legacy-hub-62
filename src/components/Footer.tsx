@@ -5,7 +5,7 @@ const footerLinks = {
     { name: 'Notre Histoire', href: '#context' },
     { name: 'Mission & Vision', href: '#mission' },
     { name: 'Nos Valeurs', href: '#values' },
-    { name: 'Équipe', href: '#' },
+    { name: 'Équipe', href: '#team' },
   ],
   ressources: [
     { name: 'Publications', href: '#' },
