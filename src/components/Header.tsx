@@ -9,6 +9,7 @@ const navLinks = [
   { name: 'Peuples', href: '#peoples' },
   { name: 'Mission', href: '#mission' },
   { name: 'Valeurs', href: '#values' },
+  { name: 'Notre Équipe', href: '#team' },
   { name: 'Contact', href: '#contact' },
 ];
 
