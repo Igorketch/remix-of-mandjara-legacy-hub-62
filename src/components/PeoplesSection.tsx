@@ -15,20 +15,20 @@ const peoples = [
     color: 'heritage-gold',
   },
   {
-    name: 'Les Bafia',
-    region: 'Région du Mbam, Cameroun',
-    image: bafiaImage,
-    description: 'Population bantoue aux traditions et structures sociales profondément enracinées, gardiens d\'un savoir ancestral.',
-    highlight: 'Traditions bantoues',
-    color: 'heritage-terracotta',
-  },
-  {
     name: 'Les Nso\'',
     region: 'Région du Nord-Ouest, Cameroun',
     image: nsoImage,
     description: 'Héritiers des populations Tikar, ils ont su préserver une forte identité culturelle et sociale malgré les migrations et les bouleversements historiques.',
     highlight: 'Héritage Tikar',
     color: 'heritage-forest',
+  },
+  {
+    name: 'Les Bafia',
+    region: 'Région du Mbam, Cameroun',
+    image: bafiaImage,
+    description: 'Population bantoue aux traditions et structures sociales profondément enracinées, gardiens d\'un savoir ancestral.',
+    highlight: 'Traditions bantoues',
+    color: 'heritage-terracotta',
   },
 ];
 
