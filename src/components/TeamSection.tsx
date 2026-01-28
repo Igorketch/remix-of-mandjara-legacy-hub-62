@@ -252,7 +252,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
 
 export const TeamSection = () => {
   return (
-    <section id="equipe" className="py-24 bg-heritage-cream relative overflow-hidden">
+    <section id="notre-equipe" className="py-24 bg-heritage-cream relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-heritage-gold/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-heritage-terracotta/5 rounded-full translate-x-1/2 translate-y-1/2" />
