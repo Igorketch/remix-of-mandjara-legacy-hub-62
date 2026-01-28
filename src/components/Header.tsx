@@ -2,20 +2,22 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Accueil', href: '#hero' },
-  { name: 'Notre Histoire', href: '#context' },
-  { name: 'Peuples', href: '#peoples' },
-  { name: 'Mission', href: '#mission' },
-  { name: 'Valeurs', href: '#values' },
-  { name: 'Notre Équipe', href: '#notre-equipe' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Accueil', href: '/' },
+  { name: 'Notre Histoire', href: '/context' },
+  { name: 'Peuples', href: '/peoples' },
+  { name: 'Mission', href: '/mission' },
+  { name: 'Valeurs', href: '/values' },
+  { name: 'Notre Équipe', href: '/team' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +27,16 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const isActive = (href: string) => {
+    if (href === '/') return location.pathname === '/';
+    return location.pathname.startsWith(href);
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -33,13 +45,13 @@ export const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'bg-heritage-earth/95 backdrop-blur-md shadow-heritage py-3'
-          : 'bg-transparent py-5'
+          : 'bg-heritage-earth/80 backdrop-blur-sm py-5'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <Globe className="w-10 h-10 text-heritage-gold transition-transform duration-300 group-hover:rotate-12" />
               <div className="absolute inset-0 bg-heritage-gold/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -52,27 +64,35 @@ export const Header = () => {
                 MANDJARA HERITAGE
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="relative text-heritage-cream/80 hover:text-heritage-gold transition-colors duration-300 font-medium text-sm tracking-wide group"
+                to={link.href}
+                className={`relative text-sm tracking-wide group transition-colors duration-300 ${
+                  isActive(link.href)
+                    ? 'text-heritage-gold font-semibold'
+                    : 'text-heritage-cream/80 hover:text-heritage-gold font-medium'
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-heritage-gold transition-all duration-300 group-hover:w-full" />
-              </a>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-heritage-gold transition-all duration-300 ${
+                  isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
+              </Link>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="gold" size="default">
-              Rejoindre
-            </Button>
+            <Link to="/contact">
+              <Button variant="gold" size="default">
+                Rejoindre
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -95,23 +115,31 @@ export const Header = () => {
               transition={{ duration: 0.3 }}
               className="lg:hidden overflow-hidden"
             >
-              <div className="py-6 space-y-4">
+              <div className="py-6 space-y-2">
                 {navLinks.map((link, index) => (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-heritage-cream/90 hover:text-heritage-gold transition-colors py-2 font-medium"
                   >
-                    {link.name}
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      className={`block py-3 px-4 rounded-lg transition-colors ${
+                        isActive(link.href)
+                          ? 'text-heritage-gold bg-heritage-gold/10 font-semibold'
+                          : 'text-heritage-cream/90 hover:text-heritage-gold hover:bg-heritage-cream/5'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
-                <Button variant="gold" className="w-full mt-4">
-                  Rejoindre
-                </Button>
+                <Link to="/contact" className="block mt-4">
+                  <Button variant="gold" className="w-full">
+                    Rejoindre
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           )}

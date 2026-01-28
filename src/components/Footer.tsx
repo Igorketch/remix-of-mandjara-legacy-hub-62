@@ -1,11 +1,13 @@
 import { Globe, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const footerLinks = {
   organisation: [
-    { name: 'Notre Histoire', href: '#context' },
-    { name: 'Mission & Vision', href: '#mission' },
-    { name: 'Nos Valeurs', href: '#values' },
-    { name: 'Équipe', href: '#notre-equipe' },
+    { name: 'Notre Histoire', href: '/context' },
+    { name: 'Les Peuples', href: '/peoples' },
+    { name: 'Mission & Vision', href: '/mission' },
+    { name: 'Nos Valeurs', href: '/values' },
+    { name: 'Notre Équipe', href: '/team' },
   ],
   ressources: [
     { name: 'Publications', href: '#' },
@@ -34,7 +36,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#hero" className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6">
               <Globe className="w-10 h-10 text-heritage-gold" />
               <div>
                 <span className="block font-serif text-xl font-bold text-heritage-cream">
@@ -44,7 +46,7 @@ export const Footer = () => {
                   MANDJARA HERITAGE
                 </span>
               </div>
-            </a>
+            </Link>
             <p className="text-heritage-cream/60 leading-relaxed mb-6 max-w-md">
               Préserver et transmettre le patrimoine culturel, historique et social 
               des peuples Bamoun, Bafia et Nso' pour les générations futures.
@@ -69,12 +71,21 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.organisation.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
-                  >
-                    {link.name}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link
+                      to={link.href}
+                      className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -88,12 +88,16 @@ export const HeroSection = () => {
           duration: 0.8,
           delay: 0.9
         }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="gold" size="xl">
-              Découvrir Notre Mission
-            </Button>
-            <Button variant="outline-light" size="xl">
-              En Savoir Plus
-            </Button>
+            <a href="/mission">
+              <Button variant="gold" size="xl">
+                Découvrir Notre Mission
+              </Button>
+            </a>
+            <a href="/peoples">
+              <Button variant="outline-light" size="xl">
+                En Savoir Plus
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
 
@@ -106,7 +110,7 @@ export const HeroSection = () => {
         duration: 1,
         delay: 1.5
       }} className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <a href="#context" className="flex flex-col items-center gap-2 text-heritage-cream/60 hover:text-heritage-gold transition-colors">
+          <a href="/context" className="flex flex-col items-center gap-2 text-heritage-cream/60 hover:text-heritage-gold transition-colors">
             <span className="text-xs tracking-widest uppercase">Découvrir</span>
             <motion.div animate={{
             y: [0, 8, 0]
