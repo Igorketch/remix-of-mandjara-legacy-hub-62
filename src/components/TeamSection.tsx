@@ -4,6 +4,7 @@ import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
 import reginaPortrait from '@/assets/regina-portrait.png';
+import pepertuaPortrait from '@/assets/pepertua-portrait.jpeg';
 
 interface Achievement {
   icon: React.ElementType;
@@ -148,6 +149,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Un engagement profond en faveur de la santé, de la dignité humaine et de la transmission des valeurs culturelles."
+  },
+  {
+    name: "Professeure Pepertua K. Nkamanyang Lola",
+    role: "Représentante Pays • Cameroun/Nigeria",
+    portrait: pepertuaPortrait,
+    bio: [
+      "La professeure Pepertua K. Nkamanyang Lola est une universitaire, écrivaine et intellectuelle publique de renom, spécialisée en études littéraires et culturelles anglophones. Elle cumule plus de vingt-cinq années d'expérience dans l'enseignement supérieur, la recherche académique et le leadership institutionnel, avec des engagements professionnels au Cameroun, au Nigeria et à l'international.",
+      "Autrice primée, poétesse et romancière, elle a reçu en 2014 un prix littéraire pour son ouvrage The Lock on My Lips. Au sein d'International Mandjara Heritage, elle met son expertise académique, son leadership intellectuel et son engagement culturel au service de la promotion du dialogue interculturel, du patrimoine africain et de la transmission intergénérationnelle des savoirs."
+    ],
+    achievements: [
+      {
+        icon: Award,
+        title: "Prix Littéraire 2014",
+        description: "Lauréate pour son ouvrage 'The Lock on My Lips' sur l'égalité des genres"
+      },
+      {
+        icon: BookOpen,
+        title: "Universitaire & Chercheuse",
+        description: "Plus de 25 ans d'expérience en études littéraires et culturelles anglophones"
+      },
+      {
+        icon: Globe,
+        title: "Représentante Pays",
+        description: "International Mandjara Heritage au Cameroun et au Nigeria"
+      },
+      {
+        icon: Users,
+        title: "Engagement Culturel",
+        description: "Promotion du dialogue interculturel et valorisation des voix africaines"
+      }
+    ],
+    quote: "Un engagement constant en faveur de l'éducation, de la préservation culturelle et de la valorisation des voix africaines."
   }
 ];
 
