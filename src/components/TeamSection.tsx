@@ -4,7 +4,7 @@ import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
 import reginaPortrait from '@/assets/regina-portrait.png';
-import pepertuaPortrait from '@/assets/pepertua-portrait.jpeg';
+import pepertuaPortrait from '@/assets/pepertua-portrait-refined.jpeg';
 import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
 
 interface Achievement {
