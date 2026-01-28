@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase } from 'lucide-react';
+import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette } from 'lucide-react';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
 import reginaPortrait from '@/assets/regina-portrait.png';
 import pepertuaPortrait from '@/assets/pepertua-portrait-refined.jpeg';
 import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
+import sylviePortrait from '@/assets/sylvie-portrait.jpg';
 
 interface Achievement {
   icon: React.ElementType;
@@ -214,6 +215,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Un dévouement envers des causes philanthropiques, éducatives et le développement des échanges internationaux."
+  },
+  {
+    name: "Sylvie Mouchingam épouse Tabue",
+    role: "Conseillère • Comité des Sages",
+    portrait: sylviePortrait,
+    bio: [
+      "Sylvie Mouchingam épouse Tabue est une entrepreneure, dirigeante et actrice communautaire engagée, reconnue pour sa capacité à articuler leadership stratégique, engagement socioculturel et sens profond du service.",
+      "Fondatrice et PDG de Mandjara Travel et Mandjara Arts, elle contribue à la promotion des arts, de la culture et à la valorisation du patrimoine. Au sein d'International Mandjara Heritage, elle siège comme conseillère au Comité des sages, accompagnant la vision, l'orientation éthique et la transmission des valeurs fondamentales de l'institution."
+    ],
+    achievements: [
+      {
+        icon: Plane,
+        title: "Mandjara Travel",
+        description: "Fondatrice et PDG, services de transport aérien et mobilité internationale"
+      },
+      {
+        icon: Palette,
+        title: "Mandjara Arts",
+        description: "Fondatrice et PDG, promotion des arts et valorisation du patrimoine culturel"
+      },
+      {
+        icon: Users,
+        title: "Bureau Exécutif",
+        description: "Membre du Bureau exécutif de Mandjara Douala, coordination des initiatives"
+      },
+      {
+        icon: ScrollText,
+        title: "Comité des Sages",
+        description: "Conseillère pour la vision éthique et la transmission intergénérationnelle"
+      }
+    ],
+    quote: "Un leadership fondé sur le service, la foi, la responsabilité sociale et l'impact durable."
   }
 ];
 
