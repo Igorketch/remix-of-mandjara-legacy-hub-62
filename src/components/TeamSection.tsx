@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles } from 'lucide-react';
+import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase } from 'lucide-react';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
 import reginaPortrait from '@/assets/regina-portrait.png';
 import pepertuaPortrait from '@/assets/pepertua-portrait.jpeg';
+import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
 
 interface Achievement {
   icon: React.ElementType;
@@ -181,6 +182,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Un engagement constant en faveur de l'éducation, de la préservation culturelle et de la valorisation des voix africaines."
+  },
+  {
+    name: "Ousmanou NGAM",
+    role: "Membre • Leader Entrepreneurial",
+    portrait: ousmanouPortrait,
+    bio: [
+      "Ousmanou NGAM est titulaire d'un Executive MBA de l'Université du Québec à Montréal et d'un Advanced Management Programme de l'ESSEC de Paris. En tant que Président de Global Trade Logistics Canada Inc, il a notamment orchestré l'acquisition du laboratoire de Cosmétique Capillaire KARILISS Inc.",
+      "Avant son installation au Canada, il a dirigé plusieurs entreprises en Afrique, en Europe et en Chine. Son engagement actif en tant qu'administrateur au sein de la fondation MMS, ainsi que ses interventions comme éducateur à l'école TEFLER de l'Université d'Ottawa, soulignent son dévouement envers des causes philanthropiques et éducatives."
+    ],
+    achievements: [
+      {
+        icon: Building2,
+        title: "Global Trade Logistics Canada",
+        description: "Président et acquisition du laboratoire KARILISS Inc"
+      },
+      {
+        icon: GraduationCap,
+        title: "Formation d'Excellence",
+        description: "Executive MBA (UQÀM) et Advanced Management Programme (ESSEC Paris)"
+      },
+      {
+        icon: HandHeart,
+        title: "Fondation MMS",
+        description: "Administrateur de la fondation Mère du Monde pour la Santé"
+      },
+      {
+        icon: Briefcase,
+        title: "Réseaux d'Affaires",
+        description: "Membre des Chambres de Commerce de Montréal, Laval et Sainte-Thérèse-Blainville"
+      }
+    ],
+    quote: "Un dévouement envers des causes philanthropiques, éducatives et le développement des échanges internationaux."
   }
 ];
 
