@@ -9,6 +9,7 @@ import pepertuaPortrait from '@/assets/pepertua-portrait-refined.jpeg';
 import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
 import sylviePortrait from '@/assets/sylvie-portrait.jpg';
 import charlottePortrait from '@/assets/charlotte-portrait.jpg';
+import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
 interface Achievement {
   icon: React.ElementType;
   title: string;
@@ -280,6 +281,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "La croissance personnelle et collective est un processus évolutif nourri par chaque étape de la vie."
+  },
+  {
+    name: "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju'",
+    role: "Fondatrice • Présidente du CA",
+    portrait: lauretinePortrait,
+    bio: [
+      "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju' est une experte internationale en égalité des genres, équité, diversité et inclusion (EEDI), anthropologue de formation et leader engagée en développement international, justice sociale et leadership inclusif. Elle cumule plus de quinze années d'expérience au sein d'institutions gouvernementales, académiques et communautaires.",
+      "Fondatrice de l'International Mandjara Heritage, elle siège à la fois au Conseil d'administration et au Bureau exécutif, assurant l'orientation stratégique, la gouvernance et le rayonnement international de l'organisation. Conférencière, auteure et activiste communautaire, elle œuvre à la décolonisation des savoirs et au dialogue entre les communautés africaines et diasporiques."
+    ],
+    achievements: [
+      {
+        icon: Crown,
+        title: "Fondatrice IMH",
+        description: "Fondatrice et Présidente du CA d'International Mandjara Heritage"
+      },
+      {
+        icon: Building2,
+        title: "Gouvernement Fédéral",
+        description: "Gestionnaire contribuant aux cadres stratégiques d'équité et d'inclusion au Canada"
+      },
+      {
+        icon: GraduationCap,
+        title: "Anthropologue & Experte EEDI",
+        description: "Plus de 15 ans d'expertise en égalité des genres, diversité et inclusion"
+      },
+      {
+        icon: Users,
+        title: "Engagement Communautaire",
+        description: "Actrice engagée de la communauté franco-ontarienne, parent ambassadrice et conférencière"
+      }
+    ],
+    quote: "Un leadership engagé, à la croisée de l'action institutionnelle, de l'engagement communautaire et de la transmission culturelle."
   }
 ];
 
