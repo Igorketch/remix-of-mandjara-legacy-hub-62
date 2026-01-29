@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Award, Building2, Heart, Leaf, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette } from 'lucide-react';
+import { Users, Award, Building2, Heart, Leaf, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette, HeartPulse } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
@@ -8,7 +8,7 @@ import reginaPortrait from '@/assets/regina-portrait.png';
 import pepertuaPortrait from '@/assets/pepertua-portrait-refined.jpeg';
 import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
 import sylviePortrait from '@/assets/sylvie-portrait.jpg';
-
+import charlottePortrait from '@/assets/charlotte-portrait.jpg';
 interface Achievement {
   icon: React.ElementType;
   title: string;
@@ -248,6 +248,38 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Un leadership fondé sur le service, la foi, la responsabilité sociale et l'impact durable."
+  },
+  {
+    name: "Charlotte Wirsiy",
+    role: "Membre du CA • Représentante Nso'",
+    portrait: charlottePortrait,
+    bio: [
+      "Madame Charlotte Wirsiy est une professionnelle engagée et une actrice communautaire investie dans les domaines du développement durable, de la résilience communautaire et du soin aux personnes. Née et élevée au Cameroun, elle a grandi dans un environnement marqué par la famille, la solidarité et un fort sentiment d'appartenance communautaire.",
+      "Titulaire d'un master en gestion des catastrophes et développement durable, elle s'est ensuite reconvertie vers les sciences infirmières au Canada, alignant son parcours avec sa vocation de service et d'accompagnement humain. Au sein d'International Mandjara Heritage, elle contribue à la promotion du dialogue interculturel et à la valorisation des patrimoines culturels dans une perspective inclusive et intergénérationnelle."
+    ],
+    achievements: [
+      {
+        icon: GraduationCap,
+        title: "Master Développement Durable",
+        description: "Gestion des catastrophes et résilience communautaire"
+      },
+      {
+        icon: HeartPulse,
+        title: "Sciences Infirmières",
+        description: "Reconversion professionnelle au Canada, vocation de soin et d'accompagnement"
+      },
+      {
+        icon: Users,
+        title: "Conseil d'Administration",
+        description: "Membre du CA d'International Mandjara Heritage"
+      },
+      {
+        icon: Crown,
+        title: "Représentante Nso'",
+        description: "Promotion du dialogue interculturel et transmission des valeurs communautaires"
+      }
+    ],
+    quote: "La croissance personnelle et collective est un processus évolutif nourri par chaque étape de la vie."
   }
 ];
 
