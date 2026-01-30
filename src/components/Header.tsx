@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
-
+import mandjaraLogo from '@/assets/mandjara-logo.png';
 const navLinks = [
   { name: 'Accueil', href: '/' },
   { name: 'Notre Histoire', href: '/context' },
@@ -51,18 +51,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <Globe className="w-10 h-10 text-heritage-gold transition-transform duration-300 group-hover:rotate-12" />
-              <div className="absolute inset-0 bg-heritage-gold/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="hidden sm:block">
-              <span className="block font-serif text-xl font-bold text-heritage-cream leading-tight">
-                International
-              </span>
-              <span className="block text-heritage-gold text-sm font-medium tracking-wider">
-                MANDJARA HERITAGE
-              </span>
+              <img 
+                src={mandjaraLogo} 
+                alt="International Mandjara Heritage" 
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" 
+              />
             </div>
           </Link>
 

@@ -1,5 +1,6 @@
-import { Globe, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import mandjaraLogo from '@/assets/mandjara-logo.png';
 
 const footerLinks = {
   organisation: [
@@ -37,15 +38,11 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <Globe className="w-10 h-10 text-heritage-gold" />
-              <div>
-                <span className="block font-serif text-xl font-bold text-heritage-cream">
-                  International
-                </span>
-                <span className="block text-heritage-gold text-sm font-medium tracking-wider">
-                  MANDJARA HERITAGE
-                </span>
-              </div>
+              <img 
+                src={mandjaraLogo} 
+                alt="International Mandjara Heritage" 
+                className="h-16 w-auto" 
+              />
             </Link>
             <p className="text-heritage-cream/60 leading-relaxed mb-6 max-w-md">
               Préserver et transmettre le patrimoine culturel, historique et social 
