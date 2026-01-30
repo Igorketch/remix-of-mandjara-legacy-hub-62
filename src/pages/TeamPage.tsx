@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Award, Building2, Heart, Leaf, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette, HeartPulse } from 'lucide-react';
+import { Users, Award, Building2, Heart, Leaf, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette, HeartPulse, Star, UserCheck } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
@@ -10,6 +10,7 @@ import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
 import sylviePortrait from '@/assets/sylvie-portrait.jpg';
 import charlottePortrait from '@/assets/charlotte-portrait.jpg';
 import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
+
 interface Achievement {
   icon: React.ElementType;
   title: string;
@@ -25,7 +26,48 @@ interface TeamMember {
   quote: string;
 }
 
-const teamMembers: TeamMember[] = [
+interface TeamCategory {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: React.ElementType;
+  members: TeamMember[];
+}
+
+// Conseil d'Administration members
+const conseilAdministration: TeamMember[] = [
+  {
+    name: "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju'",
+    role: "Fondatrice • Présidente du CA",
+    portrait: lauretinePortrait,
+    bio: [
+      "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju' est une experte internationale en égalité des genres, équité, diversité et inclusion (EEDI), anthropologue de formation et leader engagée en développement international, justice sociale et leadership inclusif. Elle cumule plus de quinze années d'expérience au sein d'institutions gouvernementales, académiques et communautaires.",
+      "Fondatrice de l'International Mandjara Heritage, elle siège à la fois au Conseil d'administration et au Bureau exécutif, assurant l'orientation stratégique, la gouvernance et le rayonnement international de l'organisation. Conférencière, auteure et activiste communautaire, elle œuvre à la décolonisation des savoirs et au dialogue entre les communautés africaines et diasporiques."
+    ],
+    achievements: [
+      {
+        icon: Crown,
+        title: "Fondatrice IMH",
+        description: "Fondatrice et Présidente du CA d'International Mandjara Heritage"
+      },
+      {
+        icon: Building2,
+        title: "Gouvernement Fédéral",
+        description: "Gestionnaire contribuant aux cadres stratégiques d'équité et d'inclusion au Canada"
+      },
+      {
+        icon: GraduationCap,
+        title: "Anthropologue & Experte EEDI",
+        description: "Plus de 15 ans d'expertise en égalité des genres, diversité et inclusion"
+      },
+      {
+        icon: Users,
+        title: "Engagement Communautaire",
+        description: "Actrice engagée de la communauté franco-ontarienne, parent ambassadrice et conférencière"
+      }
+    ],
+    quote: "Un leadership engagé, à la croisée de l'action institutionnelle, de l'engagement communautaire et de la transmission culturelle."
+  },
   {
     name: "Madame Aïchetou",
     role: "Trésorière • Représentante Bamoun",
@@ -57,6 +99,74 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Un engagement constant en faveur de l'entrepreneuriat responsable, du bien-être, et du développement durable des communautés."
+  },
+  {
+    name: "Charlotte Wirsiy",
+    role: "Membre du CA • Représentante Nso'",
+    portrait: charlottePortrait,
+    bio: [
+      "Madame Charlotte Wirsiy est une professionnelle engagée et une actrice communautaire investie dans les domaines du développement durable, de la résilience communautaire et du soin aux personnes. Née et élevée au Cameroun, elle a grandi dans un environnement marqué par la famille, la solidarité et un fort sentiment d'appartenance communautaire.",
+      "Titulaire d'un master en gestion des catastrophes et développement durable, elle s'est ensuite reconvertie vers les sciences infirmières au Canada, alignant son parcours avec sa vocation de service et d'accompagnement humain. Au sein d'International Mandjara Heritage, elle contribue à la promotion du dialogue interculturel et à la valorisation des patrimoines culturels dans une perspective inclusive et intergénérationnelle."
+    ],
+    achievements: [
+      {
+        icon: GraduationCap,
+        title: "Master Développement Durable",
+        description: "Gestion des catastrophes et résilience communautaire"
+      },
+      {
+        icon: HeartPulse,
+        title: "Sciences Infirmières",
+        description: "Reconversion professionnelle au Canada, vocation de soin et d'accompagnement"
+      },
+      {
+        icon: Users,
+        title: "Conseil d'Administration",
+        description: "Membre du CA d'International Mandjara Heritage"
+      },
+      {
+        icon: Crown,
+        title: "Représentante Nso'",
+        description: "Promotion du dialogue interculturel et transmission des valeurs communautaires"
+      }
+    ],
+    quote: "La croissance personnelle et collective est un processus évolutif nourri par chaque étape de la vie."
+  }
+];
+
+// Représentants nationaux
+const representantsNationaux: TeamMember[] = [
+  {
+    name: "Regina Fonyuy Wirba",
+    role: "Représentante Pays • Cameroun • Communauté Nso'",
+    portrait: reginaPortrait,
+    bio: [
+      "L'honorable Reine mère Regina Fonyuy Wirba est une infirmière anesthésiste engagée et une figure communautaire respectée, originaire de Jakiri, au sein de la communauté Nso'. Elle conjugue expertise professionnelle en santé et engagement communautaire au service du bien-être et de l'autonomisation des femmes.",
+      "En reconnaissance de son dévouement et de son rôle fédérateur, elle a été honorée du titre de « Reine Mère de Bongkisheri Douala », une distinction symbolisant sa sagesse, son sens du service et son influence positive au sein de la communauté."
+    ],
+    achievements: [
+      {
+        icon: Stethoscope,
+        title: "Infirmière Anesthésiste",
+        description: "Expertise professionnelle en santé au service du bien-être communautaire"
+      },
+      {
+        icon: Crown,
+        title: "Reine Mère Mbinkar",
+        description: "Titre honorifique de Reine Mère de Bongkisheri Douala pour son leadership"
+      },
+      {
+        icon: Users,
+        title: "Association Femmes Nso'",
+        description: "Présidente 2015-2021 de l'Association des Femmes Nso' de Bongkisheri Douala"
+      },
+      {
+        icon: Sparkles,
+        title: "ASMADLA",
+        description: "Membre du Bureau exécutif de l'Association Mandjara de Douala"
+      }
+    ],
+    quote: "Un engagement profond en faveur de la santé, de la dignité humaine et de la transmission des valeurs culturelles."
   },
   {
     name: "Madame Ngameyet épouse Mouliom Perside",
@@ -91,70 +201,6 @@ const teamMembers: TeamMember[] = [
     quote: "Promouvoir l'amour du prochain, la solidarité et les échanges d'expériences culturelles pour un impact social durable."
   },
   {
-    name: "NJI Ncharé Oumarou",
-    role: "Conseiller • Comité des Sages",
-    portrait: ncharePortrait,
-    bio: [
-      "Figure majeure de la préservation et de la transmission du patrimoine culturel Bamoun, Monsieur Ncharé Oumarou occupe le poste de Directeur des Affaires administratives et culturelles du Palais des Rois Bamoun, où il œuvre depuis plusieurs décennies à la sauvegarde et à la diffusion de l'héritage historique du Royaume Bamoun.",
-      "Linguiste, archiviste et muséologue, il est reconnu comme spécialiste de l'écriture Shu-Mom et des langues inventées par le Roi Njoya. Co-traducteur du Saint Coran en langue bamoun, il contribue à la transmission intergénérationnelle des savoirs Bamoun."
-    ],
-    achievements: [
-      {
-        icon: Crown,
-        title: "Palais des Rois Bamoun",
-        description: "Directeur des Affaires administratives et culturelles depuis plusieurs décennies"
-      },
-      {
-        icon: Languages,
-        title: "Écriture Shu-Mom",
-        description: "Spécialiste des langues inventées par le Roi Njoya et traducteur du Coran en bamoun"
-      },
-      {
-        icon: BookOpen,
-        title: "Archiviste & Muséologue",
-        description: "Conservation et interprétation des manuscrits royaux du Royaume Bamoun"
-      },
-      {
-        icon: ScrollText,
-        title: "Comité des Sages",
-        description: "Conseiller apportant expertise historique et sagesse aux orientations de l'organisation"
-      }
-    ],
-    quote: "Une mémoire vivante au service de la culture, de l'histoire et de l'identité des peuples."
-  },
-  {
-    name: "Regina Fonyuy Wirba",
-    role: "Représentante Pays • Cameroun • Communauté Nso'",
-    portrait: reginaPortrait,
-    bio: [
-      "L'honorable Reine mère Regina Fonyuy Wirba est une infirmière anesthésiste engagée et une figure communautaire respectée, originaire de Jakiri, au sein de la communauté Nso'. Elle conjugue expertise professionnelle en santé et engagement communautaire au service du bien-être et de l'autonomisation des femmes.",
-      "En reconnaissance de son dévouement et de son rôle fédérateur, elle a été honorée du titre de « Reine Mère de Bongkisheri Douala », une distinction symbolisant sa sagesse, son sens du service et son influence positive au sein de la communauté."
-    ],
-    achievements: [
-      {
-        icon: Stethoscope,
-        title: "Infirmière Anesthésiste",
-        description: "Expertise professionnelle en santé au service du bien-être communautaire"
-      },
-      {
-        icon: Crown,
-        title: "Reine Mère Mbinkar",
-        description: "Titre honorifique de Reine Mère de Bongkisheri Douala pour son leadership"
-      },
-      {
-        icon: Users,
-        title: "Association Femmes Nso'",
-        description: "Présidente 2015-2021 de l'Association des Femmes Nso' de Bongkisheri Douala"
-      },
-      {
-        icon: Sparkles,
-        title: "ASMADLA",
-        description: "Membre du Bureau exécutif de l'Association Mandjara de Douala"
-      }
-    ],
-    quote: "Un engagement profond en faveur de la santé, de la dignité humaine et de la transmission des valeurs culturelles."
-  },
-  {
     name: "Professeure Pepertua K. Nkamanyang Lola",
     role: "Représentante Pays • Cameroun/Nigeria",
     portrait: pepertuaPortrait,
@@ -185,38 +231,42 @@ const teamMembers: TeamMember[] = [
       }
     ],
     quote: "Un engagement constant en faveur de l'éducation, de la préservation culturelle et de la valorisation des voix africaines."
-  },
+  }
+];
+
+// Comité des sages
+const comiteSages: TeamMember[] = [
   {
-    name: "Ousmanou NGAM",
-    role: "Membre • Leader Entrepreneurial",
-    portrait: ousmanouPortrait,
+    name: "NJI Ncharé Oumarou",
+    role: "Conseiller • Comité des Sages",
+    portrait: ncharePortrait,
     bio: [
-      "Ousmanou NGAM est titulaire d'un Executive MBA de l'Université du Québec à Montréal et d'un Advanced Management Programme de l'ESSEC de Paris. En tant que Président de Global Trade Logistics Canada Inc, il a notamment orchestré l'acquisition du laboratoire de Cosmétique Capillaire KARILISS Inc.",
-      "Avant son installation au Canada, il a dirigé plusieurs entreprises en Afrique, en Europe et en Chine. Son engagement actif en tant qu'administrateur au sein de la fondation MMS, ainsi que ses interventions comme éducateur à l'école TEFLER de l'Université d'Ottawa, soulignent son dévouement envers des causes philanthropiques et éducatives."
+      "Figure majeure de la préservation et de la transmission du patrimoine culturel Bamoun, Monsieur Ncharé Oumarou occupe le poste de Directeur des Affaires administratives et culturelles du Palais des Rois Bamoun, où il œuvre depuis plusieurs décennies à la sauvegarde et à la diffusion de l'héritage historique du Royaume Bamoun.",
+      "Linguiste, archiviste et muséologue, il est reconnu comme spécialiste de l'écriture Shu-Mom et des langues inventées par le Roi Njoya. Co-traducteur du Saint Coran en langue bamoun, il contribue à la transmission intergénérationnelle des savoirs Bamoun."
     ],
     achievements: [
       {
-        icon: Building2,
-        title: "Global Trade Logistics Canada",
-        description: "Président et acquisition du laboratoire KARILISS Inc"
+        icon: Crown,
+        title: "Palais des Rois Bamoun",
+        description: "Directeur des Affaires administratives et culturelles depuis plusieurs décennies"
       },
       {
-        icon: GraduationCap,
-        title: "Formation d'Excellence",
-        description: "Executive MBA (UQÀM) et Advanced Management Programme (ESSEC Paris)"
+        icon: Languages,
+        title: "Écriture Shu-Mom",
+        description: "Spécialiste des langues inventées par le Roi Njoya et traducteur du Coran en bamoun"
       },
       {
-        icon: HandHeart,
-        title: "Fondation MMS",
-        description: "Administrateur de la fondation Mère du Monde pour la Santé"
+        icon: BookOpen,
+        title: "Archiviste & Muséologue",
+        description: "Conservation et interprétation des manuscrits royaux du Royaume Bamoun"
       },
       {
-        icon: Briefcase,
-        title: "Réseaux d'Affaires",
-        description: "Membre des Chambres de Commerce de Montréal, Laval et Sainte-Thérèse-Blainville"
+        icon: ScrollText,
+        title: "Comité des Sages",
+        description: "Conseiller apportant expertise historique et sagesse aux orientations de l'organisation"
       }
     ],
-    quote: "Un dévouement envers des causes philanthropiques, éducatives et le développement des échanges internationaux."
+    quote: "Une mémoire vivante au service de la culture, de l'histoire et de l'identité des peuples."
   },
   {
     name: "Sylvie Mouchingam épouse Tabue",
@@ -251,68 +301,82 @@ const teamMembers: TeamMember[] = [
     quote: "Un leadership fondé sur le service, la foi, la responsabilité sociale et l'impact durable."
   },
   {
-    name: "Charlotte Wirsiy",
-    role: "Membre du CA • Représentante Nso'",
-    portrait: charlottePortrait,
+    name: "Ousmanou NGAM",
+    role: "Conseiller • Comité des Sages",
+    portrait: ousmanouPortrait,
     bio: [
-      "Madame Charlotte Wirsiy est une professionnelle engagée et une actrice communautaire investie dans les domaines du développement durable, de la résilience communautaire et du soin aux personnes. Née et élevée au Cameroun, elle a grandi dans un environnement marqué par la famille, la solidarité et un fort sentiment d'appartenance communautaire.",
-      "Titulaire d'un master en gestion des catastrophes et développement durable, elle s'est ensuite reconvertie vers les sciences infirmières au Canada, alignant son parcours avec sa vocation de service et d'accompagnement humain. Au sein d'International Mandjara Heritage, elle contribue à la promotion du dialogue interculturel et à la valorisation des patrimoines culturels dans une perspective inclusive et intergénérationnelle."
+      "Ousmanou NGAM est titulaire d'un Executive MBA de l'Université du Québec à Montréal et d'un Advanced Management Programme de l'ESSEC de Paris. En tant que Président de Global Trade Logistics Canada Inc, il a notamment orchestré l'acquisition du laboratoire de Cosmétique Capillaire KARILISS Inc.",
+      "Avant son installation au Canada, il a dirigé plusieurs entreprises en Afrique, en Europe et en Chine. Son engagement actif en tant qu'administrateur au sein de la fondation MMS, ainsi que ses interventions comme éducateur à l'école TEFLER de l'Université d'Ottawa, soulignent son dévouement envers des causes philanthropiques et éducatives."
     ],
     achievements: [
-      {
-        icon: GraduationCap,
-        title: "Master Développement Durable",
-        description: "Gestion des catastrophes et résilience communautaire"
-      },
-      {
-        icon: HeartPulse,
-        title: "Sciences Infirmières",
-        description: "Reconversion professionnelle au Canada, vocation de soin et d'accompagnement"
-      },
-      {
-        icon: Users,
-        title: "Conseil d'Administration",
-        description: "Membre du CA d'International Mandjara Heritage"
-      },
-      {
-        icon: Crown,
-        title: "Représentante Nso'",
-        description: "Promotion du dialogue interculturel et transmission des valeurs communautaires"
-      }
-    ],
-    quote: "La croissance personnelle et collective est un processus évolutif nourri par chaque étape de la vie."
-  },
-  {
-    name: "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju'",
-    role: "Fondatrice • Présidente du CA",
-    portrait: lauretinePortrait,
-    bio: [
-      "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju' est une experte internationale en égalité des genres, équité, diversité et inclusion (EEDI), anthropologue de formation et leader engagée en développement international, justice sociale et leadership inclusif. Elle cumule plus de quinze années d'expérience au sein d'institutions gouvernementales, académiques et communautaires.",
-      "Fondatrice de l'International Mandjara Heritage, elle siège à la fois au Conseil d'administration et au Bureau exécutif, assurant l'orientation stratégique, la gouvernance et le rayonnement international de l'organisation. Conférencière, auteure et activiste communautaire, elle œuvre à la décolonisation des savoirs et au dialogue entre les communautés africaines et diasporiques."
-    ],
-    achievements: [
-      {
-        icon: Crown,
-        title: "Fondatrice IMH",
-        description: "Fondatrice et Présidente du CA d'International Mandjara Heritage"
-      },
       {
         icon: Building2,
-        title: "Gouvernement Fédéral",
-        description: "Gestionnaire contribuant aux cadres stratégiques d'équité et d'inclusion au Canada"
+        title: "Global Trade Logistics Canada",
+        description: "Président et acquisition du laboratoire KARILISS Inc"
       },
       {
         icon: GraduationCap,
-        title: "Anthropologue & Experte EEDI",
-        description: "Plus de 15 ans d'expertise en égalité des genres, diversité et inclusion"
+        title: "Formation d'Excellence",
+        description: "Executive MBA (UQÀM) et Advanced Management Programme (ESSEC Paris)"
       },
       {
-        icon: Users,
-        title: "Engagement Communautaire",
-        description: "Actrice engagée de la communauté franco-ontarienne, parent ambassadrice et conférencière"
+        icon: HandHeart,
+        title: "Fondation MMS",
+        description: "Administrateur de la fondation Mère du Monde pour la Santé"
+      },
+      {
+        icon: Briefcase,
+        title: "Réseaux d'Affaires",
+        description: "Membre des Chambres de Commerce de Montréal, Laval et Sainte-Thérèse-Blainville"
       }
     ],
-    quote: "Un leadership engagé, à la croisée de l'action institutionnelle, de l'engagement communautaire et de la transmission culturelle."
+    quote: "Un dévouement envers des causes philanthropiques, éducatives et le développement des échanges internationaux."
+  }
+];
+
+// Categories structure
+const teamCategories: TeamCategory[] = [
+  {
+    id: "parrains",
+    title: "Parrains",
+    subtitle: "Personnalités de marque soutenant notre mission",
+    icon: Star,
+    members: []
+  },
+  {
+    id: "membres-honneur",
+    title: "Membres d'honneur",
+    subtitle: "Reconnus pour leur contribution exceptionnelle",
+    icon: Award,
+    members: []
+  },
+  {
+    id: "conseil-administration",
+    title: "Conseil d'Administration",
+    subtitle: "Direction stratégique et gouvernance de l'organisation",
+    icon: Building2,
+    members: conseilAdministration
+  },
+  {
+    id: "bureau-executif",
+    title: "Bureau Exécutif",
+    subtitle: "Coordination opérationnelle des activités",
+    icon: Briefcase,
+    members: []
+  },
+  {
+    id: "representants-nationaux",
+    title: "Représentants nationaux",
+    subtitle: "Ambassadeurs du patrimoine Mandjara à travers le monde",
+    icon: Globe,
+    members: representantsNationaux
+  },
+  {
+    id: "comite-sages",
+    title: "Comité des Sages",
+    subtitle: "Gardiens de la sagesse et de la tradition",
+    icon: ScrollText,
+    members: comiteSages
   }
 ];
 
@@ -415,7 +479,75 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
   );
 };
 
+const CategorySection = ({ category, globalIndex }: { category: TeamCategory; globalIndex: number }) => {
+  const IconComponent = category.icon;
+  const hasMembers = category.members.length > 0;
+  
+  return (
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mb-20"
+      id={category.id}
+    >
+      {/* Category Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <div className="inline-flex items-center justify-center gap-3 mb-4">
+          <div className="w-12 h-12 bg-heritage-gold/20 rounded-xl flex items-center justify-center">
+            <IconComponent className="w-6 h-6 text-heritage-terracotta" />
+          </div>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-heritage-brown">
+            {category.title}
+          </h2>
+        </div>
+        <p className="text-heritage-brown/70 text-lg max-w-2xl mx-auto">
+          {category.subtitle}
+        </p>
+        <div className="w-24 h-1 bg-heritage-gold/40 mx-auto mt-6 rounded-full" />
+      </motion.div>
+
+      {/* Members or Placeholder */}
+      {hasMembers ? (
+        <div className="space-y-12">
+          {category.members.map((member, index) => (
+            <TeamMemberCard 
+              key={member.name} 
+              member={member} 
+              index={globalIndex + index} 
+            />
+          ))}
+        </div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-white/50 rounded-2xl border-2 border-dashed border-heritage-gold/30 p-12 text-center"
+        >
+          <div className="w-16 h-16 bg-heritage-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <UserCheck className="w-8 h-8 text-heritage-gold/50" />
+          </div>
+          <p className="text-heritage-brown/50 text-lg italic">
+            Cette section sera complétée prochainement
+          </p>
+        </motion.div>
+      )}
+    </motion.section>
+  );
+};
+
 const TeamPage = () => {
+  let globalIndex = 0;
+  
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -446,13 +578,21 @@ const TeamPage = () => {
         </div>
       </section>
 
-      {/* Team Members */}
+      {/* Team Categories */}
       <section className="py-24 bg-heritage-cream">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto space-y-12">
-            {teamMembers.map((member, index) => (
-              <TeamMemberCard key={member.name} member={member} index={index} />
-            ))}
+          <div className="max-w-6xl mx-auto">
+            {teamCategories.map((category) => {
+              const currentIndex = globalIndex;
+              globalIndex += category.members.length;
+              return (
+                <CategorySection 
+                  key={category.id} 
+                  category={category} 
+                  globalIndex={currentIndex}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
