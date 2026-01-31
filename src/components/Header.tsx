@@ -83,9 +83,9 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link to="/contact">
+            <Link to="/donation">
               <Button variant="gold" size="default">
-                Rejoindre
+                Faire un Don
               </Button>
             </Link>
           </div>
@@ -130,9 +130,9 @@ export const Header = () => {
                     </Link>
                   </motion.div>
                 ))}
-                <Link to="/contact" className="block mt-4">
+                <Link to="/donation" className="block mt-4">
                   <Button variant="gold" className="w-full">
-                    Rejoindre
+                    Faire un Don
                   </Button>
                 </Link>
               </div>
