@@ -8,7 +8,7 @@ import pepertuaPortrait from '@/assets/pepertua-portrait-refined.jpeg';
 
 const representantsNationaux: TeamMember[] = [
   {
-    name: "Regina Fonyuy Wirba",
+    name: "Reine mère Regina Fonyuy Wirba",
     role: "Représentante Pays • Cameroun • Communauté Nso'",
     portrait: reginaPortrait,
     bio: [
