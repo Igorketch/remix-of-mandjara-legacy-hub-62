@@ -65,8 +65,8 @@ const conseilAdministration: TeamMember[] = [
       },
       {
         icon: Award,
-        title: "International Mandjara Heritage",
-        description: "Membre du CA, représentante Bamoun et Trésorière du Bureau exécutif"
+        title: "Membre du CA",
+        description: "Membre du CA et Trésorière du Bureau exécutif"
       }
     ],
     quote: "Un engagement constant en faveur de l'entrepreneuriat responsable, du bien-être, et du développement durable des communautés."
