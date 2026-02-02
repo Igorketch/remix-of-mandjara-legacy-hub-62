@@ -41,7 +41,7 @@ const conseilAdministration: TeamMember[] = [
   },
   {
     name: "Madame Aïchetou",
-    role: "Trésorière • Représentante Bamoun",
+    role: "Trésorière",
     portrait: aichetouPortrait,
     bio: [
       "Entrepreneure engagée et leader innovante, Madame Aïchetou est spécialisée dans la valorisation durable des ressources naturelles africaines, avec plus de quinze années d'expérience dans l'agroalimentaire, le bien-être, la formation et le développement d'entreprises.",
