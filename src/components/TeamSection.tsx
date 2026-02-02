@@ -214,7 +214,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Sylvie Mouchingam épouse Tabue",
-    role: "Conseillère • Comité des Sages",
+    role: "Conseillère",
     portrait: sylviePortrait,
     bio: [
       "Sylvie Mouchingam épouse Tabue est une entrepreneure, dirigeante et actrice communautaire engagée, reconnue pour sa capacité à articuler leadership stratégique, engagement socioculturel et sens profond du service.",
