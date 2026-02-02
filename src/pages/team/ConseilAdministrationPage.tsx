@@ -9,7 +9,7 @@ import charlottePortrait from '@/assets/charlotte-portrait.jpg';
 const conseilAdministration: TeamMember[] = [
   {
     name: "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju'",
-    role: "Fondatrice • Présidente du CA",
+    role: "Fondatrice • Présidente",
     portrait: lauretinePortrait,
     bio: [
       "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju' est une experte internationale en égalité des genres, équité, diversité et inclusion (EEDI), anthropologue de formation et leader engagée en développement international, justice sociale et leadership inclusif. Elle cumule plus de quinze années d'expérience au sein d'institutions gouvernementales, académiques et communautaires.",
