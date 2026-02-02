@@ -233,7 +233,7 @@ const representantsNationaux: TeamMember[] = [
 const comiteSages: TeamMember[] = [
   {
     name: "NJI Ncharé Oumarou",
-    role: "Conseiller • Comité des Sages",
+    role: "Conseiller",
     portrait: ncharePortrait,
     bio: [
       "Figure majeure de la préservation et de la transmission du patrimoine culturel Bamoun, Monsieur Ncharé Oumarou occupe le poste de Directeur des Affaires administratives et culturelles du Palais des Rois Bamoun, où il œuvre depuis plusieurs décennies à la sauvegarde et à la diffusion de l'héritage historique du Royaume Bamoun.",
@@ -297,7 +297,7 @@ const comiteSages: TeamMember[] = [
   },
   {
     name: "Ousmanou NGAM",
-    role: "Conseiller • Comité des Sages",
+    role: "Conseiller",
     portrait: ousmanouPortrait,
     bio: [
       "Ousmanou NGAM est titulaire d'un Executive MBA de l'Université du Québec à Montréal et d'un Advanced Management Programme de l'ESSEC de Paris. En tant que Président de Global Trade Logistics Canada Inc, il a notamment orchestré l'acquisition du laboratoire de Cosmétique Capillaire KARILISS Inc.",
