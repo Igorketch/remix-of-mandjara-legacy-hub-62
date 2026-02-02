@@ -10,6 +10,12 @@ import PeoplesPage from "./pages/PeoplesPage";
 import ValuesPage from "./pages/ValuesPage";
 import MissionPage from "./pages/MissionPage";
 import TeamPage from "./pages/TeamPage";
+import ParrainsPage from "./pages/team/ParrainsPage";
+import MembresHonneurPage from "./pages/team/MembresHonneurPage";
+import ConseilAdministrationPage from "./pages/team/ConseilAdministrationPage";
+import BureauExecutifPage from "./pages/team/BureauExecutifPage";
+import RepresentantsNationauxPage from "./pages/team/RepresentantsNationauxPage";
+import ComiteSagesPage from "./pages/team/ComiteSagesPage";
 import ContactPage from "./pages/ContactPage";
 import DonationPage from "./pages/DonationPage";
 import NotFound from "./pages/NotFound";
@@ -30,6 +36,12 @@ const App = () => (
             <Route path="/values" element={<ValuesPage />} />
             <Route path="/mission" element={<MissionPage />} />
             <Route path="/team" element={<TeamPage />} />
+            <Route path="/team/parrains" element={<ParrainsPage />} />
+            <Route path="/team/membres-honneur" element={<MembresHonneurPage />} />
+            <Route path="/team/conseil-administration" element={<ConseilAdministrationPage />} />
+            <Route path="/team/bureau-executif" element={<BureauExecutifPage />} />
+            <Route path="/team/representants-nationaux" element={<RepresentantsNationauxPage />} />
+            <Route path="/team/comite-sages" element={<ComiteSagesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donation" element={<DonationPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

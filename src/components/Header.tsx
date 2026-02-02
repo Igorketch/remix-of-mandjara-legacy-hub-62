@@ -15,12 +15,12 @@ const navLinks = [
 ];
 
 const teamSubLinks = [
-  { name: 'Parrains', href: '/team#parrains' },
-  { name: 'Membres d\'honneur', href: '/team#membres-honneur' },
-  { name: 'Conseil d\'Administration', href: '/team#conseil-administration' },
-  { name: 'Bureau Exécutif', href: '/team#bureau-executif' },
-  { name: 'Représentants nationaux', href: '/team#representants-nationaux' },
-  { name: 'Comité des sages', href: '/team#comite-sages' },
+  { name: 'Parrains', href: '/team/parrains' },
+  { name: 'Membres d\'honneur', href: '/team/membres-honneur' },
+  { name: 'Conseil d\'Administration', href: '/team/conseil-administration' },
+  { name: 'Bureau Exécutif', href: '/team/bureau-executif' },
+  { name: 'Représentants nationaux', href: '/team/representants-nationaux' },
+  { name: 'Comité des sages', href: '/team/comite-sages' },
 ];
 
 export const Header = () => {
@@ -49,7 +49,7 @@ export const Header = () => {
     return location.pathname.startsWith(href.split('#')[0]);
   };
 
-  const isTeamActive = () => location.pathname === '/team';
+  const isTeamActive = () => location.pathname.startsWith('/team');
 
   return (
     <motion.header
