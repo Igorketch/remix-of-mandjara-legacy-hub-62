@@ -91,11 +91,6 @@ const conseilAdministration: TeamMember[] = [
         icon: Heart,
         title: "AF. INSTITUT",
         description: "Institut de beauté et centre de formation multiculturel"
-      },
-      {
-        icon: Award,
-        title: "Membre du CA",
-        description: "Membre du CA et Trésorière du Bureau exécutif"
       }
     ],
     quote: "Un engagement constant en faveur de l'entrepreneuriat responsable, du bien-être, et du développement durable des communautés."
