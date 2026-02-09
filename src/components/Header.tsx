@@ -73,7 +73,7 @@ export const Header = () => {
   }} transition={{
     duration: 0.6,
     ease: 'easeOut'
-  }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-heritage-earth/95 backdrop-blur-md shadow-heritage py-3' : 'bg-heritage-earth/80 backdrop-blur-sm py-5'}`}>
+  }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-heritage py-3' : 'bg-background/80 backdrop-blur-sm py-5'}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
@@ -85,14 +85,14 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navLinks.map(link => <Link key={link.name} to={link.href} className={`relative text-sm tracking-wide group transition-colors duration-300 ${isActive(link.href) ? 'text-heritage-gold font-semibold' : 'text-heritage-cream/80 hover:text-heritage-gold font-medium'}`}>
+            {navLinks.map(link => <Link key={link.name} to={link.href} className={`relative text-sm tracking-wide group transition-colors duration-300 ${isActive(link.href) ? 'text-heritage-gold font-semibold' : 'text-foreground/80 hover:text-heritage-gold font-medium'}`}>
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-heritage-gold transition-all duration-300 ${isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>)}
 
             {/* Team Dropdown */}
             <div className="relative" onMouseEnter={() => setIsTeamDropdownOpen(true)} onMouseLeave={() => setIsTeamDropdownOpen(false)}>
-              <button className={`relative text-sm tracking-wide group transition-colors duration-300 flex items-center gap-1 ${isTeamActive() ? 'text-heritage-gold font-semibold' : 'text-heritage-cream/80 hover:text-heritage-gold font-medium'}`}>
+              <button className={`relative text-sm tracking-wide group transition-colors duration-300 flex items-center gap-1 ${isTeamActive() ? 'text-heritage-gold font-semibold' : 'text-foreground/80 hover:text-heritage-gold font-medium'}`}>
                 Notre Équipe
                 <ChevronDown size={14} className={`transition-transform duration-200 ${isTeamDropdownOpen ? 'rotate-180' : ''}`} />
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-heritage-gold transition-all duration-300 ${isTeamActive() ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -110,12 +110,12 @@ export const Header = () => {
                 y: 10
               }} transition={{
                 duration: 0.2
-              }} className="absolute top-full left-0 mt-2 w-64 bg-heritage-earth border border-heritage-gold/20 rounded-lg shadow-xl overflow-hidden z-50">
+              }} className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-xl overflow-hidden z-50">
                     <div className="py-2">
-                      <Link to="/team" className="block px-4 py-2 text-sm text-heritage-cream/90 hover:text-heritage-gold hover:bg-heritage-gold/10 transition-colors font-medium border-b border-heritage-gold/10">
+                      <Link to="/team" className="block px-4 py-2 text-sm text-foreground/90 hover:text-heritage-gold hover:bg-heritage-gold/10 transition-colors font-medium border-b border-border">
                         Voir toute l'équipe
                       </Link>
-                      {teamSubLinks.map(subLink => <Link key={subLink.name} to={subLink.href} className="block px-4 py-2.5 text-sm text-heritage-cream/80 hover:text-heritage-gold hover:bg-heritage-gold/10 transition-colors">
+                      {teamSubLinks.map(subLink => <Link key={subLink.name} to={subLink.href} className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-heritage-gold hover:bg-heritage-gold/10 transition-colors">
                           {subLink.name}
                         </Link>)}
                     </div>
@@ -134,7 +134,7 @@ export const Header = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden text-heritage-cream p-2" aria-label="Toggle menu">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden text-foreground p-2" aria-label="Toggle menu">
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </nav>
@@ -163,7 +163,7 @@ export const Header = () => {
             }} transition={{
               delay: index * 0.1
             }}>
-                    <Link to={link.href} className={`block py-3 px-4 rounded-lg transition-colors ${isActive(link.href) ? 'text-heritage-gold bg-heritage-gold/10 font-semibold' : 'text-heritage-cream/90 hover:text-heritage-gold hover:bg-heritage-cream/5'}`}>
+                    <Link to={link.href} className={`block py-3 px-4 rounded-lg transition-colors ${isActive(link.href) ? 'text-heritage-gold bg-heritage-gold/10 font-semibold' : 'text-foreground/90 hover:text-heritage-gold hover:bg-muted'}`}>
                       {link.name}
                     </Link>
                   </motion.div>)}
@@ -178,7 +178,7 @@ export const Header = () => {
             }} transition={{
               delay: navLinks.length * 0.1
             }}>
-                  <button onClick={() => setIsMobileTeamOpen(!isMobileTeamOpen)} className={`w-full flex items-center justify-between py-3 px-4 rounded-lg transition-colors ${isTeamActive() ? 'text-heritage-gold bg-heritage-gold/10 font-semibold' : 'text-heritage-cream/90 hover:text-heritage-gold hover:bg-heritage-cream/5'}`}>
+                  <button onClick={() => setIsMobileTeamOpen(!isMobileTeamOpen)} className={`w-full flex items-center justify-between py-3 px-4 rounded-lg transition-colors ${isTeamActive() ? 'text-heritage-gold bg-heritage-gold/10 font-semibold' : 'text-foreground/90 hover:text-heritage-gold hover:bg-muted'}`}>
                     Notre Équipe
                     <ChevronDown size={18} className={`transition-transform duration-200 ${isMobileTeamOpen ? 'rotate-180' : ''}`} />
                   </button>
@@ -197,10 +197,10 @@ export const Header = () => {
                   duration: 0.2
                 }} className="overflow-hidden">
                         <div className="ml-4 mt-1 space-y-1 border-l-2 border-heritage-gold/30 pl-4">
-                          <Link to="/team" className="block py-2 text-sm text-heritage-cream/80 hover:text-heritage-gold transition-colors font-medium">
+                          <Link to="/team" className="block py-2 text-sm text-foreground/80 hover:text-heritage-gold transition-colors font-medium">
                             Voir toute l'équipe
                           </Link>
-                          {teamSubLinks.map(subLink => <Link key={subLink.name} to={subLink.href} className="block py-2 text-sm text-heritage-cream/70 hover:text-heritage-gold transition-colors">
+                          {teamSubLinks.map(subLink => <Link key={subLink.name} to={subLink.href} className="block py-2 text-sm text-foreground/70 hover:text-heritage-gold transition-colors">
                               {subLink.name}
                             </Link>)}
                         </div>
