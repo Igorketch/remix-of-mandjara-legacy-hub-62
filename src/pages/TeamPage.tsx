@@ -334,7 +334,7 @@ const comiteSages: TeamMember[] = [
 const membresHonneur: TeamMember[] = [
   {
     name: "Madame Banka Liza Bernsa",
-    role: "Membre d'honneur",
+    role: "Représentante Pays • États-Unis",
     portrait: elizabethPortrait,
     bio: [
       "Madame Banka Liza Bernsa est une actrice communautaire engagée et une leader associative reconnue, œuvrant activement à la promotion de la culture, de la solidarité et du vivre-ensemble au sein des communautés de la diaspora.",
