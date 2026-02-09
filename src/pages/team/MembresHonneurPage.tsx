@@ -1,6 +1,44 @@
 import { motion } from 'framer-motion';
-import { Award, Users } from 'lucide-react';
+import { Award, Globe, Users, HandHeart, Building2 } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
+import { TeamMemberCard, TeamMember } from '@/components/team/TeamMemberCard';
+import elizabethPortrait from '@/assets/elizabeth-mbanka.png';
+
+const membresHonneur: TeamMember[] = [
+  {
+    name: "Madame Banka Liza Bernsa",
+    role: "Membre d'honneur",
+    portrait: elizabethPortrait,
+    bio: [
+      "Madame Banka Liza Bernsa est une actrice communautaire engagée et une leader associative reconnue, œuvrant activement à la promotion de la culture, de la solidarité et du vivre-ensemble au sein des communautés de la diaspora.",
+      "Elle occupe un rôle honorifique et représentatif au sein de l'International Mandjara Heritage, en tant que membre d'honneur et représentante pays des États-Unis. À ce titre, elle contribue au rayonnement international de l'organisation et agit comme mémoire institutionnelle et corporative du mouvement Mandjara au Cameroun.",
+      "Ancienne présidente de l'association Bongkisheri Littoral, elle a également été vice-présidente pionnière de l'Association Mandjara de Douala (ASMADLA), jouant un rôle déterminant dans les premières étapes de son organisation et de son ancrage institutionnel."
+    ],
+    achievements: [
+      {
+        icon: Award,
+        title: "Membre d'honneur IMH",
+        description: "Reconnaissance pour sa contribution exceptionnelle au mouvement Mandjara"
+      },
+      {
+        icon: Globe,
+        title: "Représentante Pays • États-Unis",
+        description: "Rayonnement international et liens entre diaspora et Cameroun"
+      },
+      {
+        icon: Users,
+        title: "ASMADLA",
+        description: "Vice-présidente pionnière de l'Association Mandjara de Douala"
+      },
+      {
+        icon: HandHeart,
+        title: "Bongkisheri Littoral",
+        description: "Ancienne présidente, structuration communautaire et valorisation culturelle"
+      }
+    ],
+    quote: "Un engagement constant au service de la culture, de la mémoire collective et de l'unité des peuples."
+  }
+];
 
 const MembresHonneurPage = () => {
   return (
@@ -26,23 +64,12 @@ const MembresHonneurPage = () => {
             </p>
           </motion.div>
 
-          {/* Empty State */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center py-20"
-          >
-            <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-heritage-gold/10 border border-heritage-gold/20 flex items-center justify-center">
-              <Users className="w-10 h-10 text-heritage-gold/50" />
-            </div>
-            <h3 className="text-2xl font-display font-semibold text-heritage-cream mb-4">
-              Section à venir
-            </h3>
-            <p className="text-heritage-cream/60 max-w-md mx-auto">
-              Les membres d'honneur de l'International Mandjara Heritage seront présentés prochainement.
-            </p>
-          </motion.div>
+          {/* Team Members */}
+          <div className="space-y-20">
+            {membresHonneur.map((member, index) => (
+              <TeamMemberCard key={member.name} member={member} index={index} />
+            ))}
+          </div>
         </div>
       </section>
     </PageLayout>

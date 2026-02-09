@@ -10,6 +10,7 @@ import ousmanouPortrait from '@/assets/ousmanou-portrait.jpg';
 import sylviePortrait from '@/assets/sylvie-portrait.jpg';
 import charlottePortrait from '@/assets/charlotte-portrait.jpg';
 import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
+import elizabethPortrait from '@/assets/elizabeth-mbanka.png';
 
 interface Achievement {
   icon: React.ElementType;
@@ -329,6 +330,42 @@ const comiteSages: TeamMember[] = [
   }
 ];
 
+// Membres d'honneur
+const membresHonneur: TeamMember[] = [
+  {
+    name: "Madame Banka Liza Bernsa",
+    role: "Membre d'honneur",
+    portrait: elizabethPortrait,
+    bio: [
+      "Madame Banka Liza Bernsa est une actrice communautaire engagée et une leader associative reconnue, œuvrant activement à la promotion de la culture, de la solidarité et du vivre-ensemble au sein des communautés de la diaspora.",
+      "Ancienne présidente de l'association Bongkisheri Littoral et vice-présidente pionnière de l'ASMADLA, elle agit comme mémoire institutionnelle et corporative du mouvement Mandjara au Cameroun."
+    ],
+    achievements: [
+      {
+        icon: Award,
+        title: "Membre d'honneur IMH",
+        description: "Reconnaissance pour sa contribution exceptionnelle au mouvement Mandjara"
+      },
+      {
+        icon: Globe,
+        title: "Représentante Pays • États-Unis",
+        description: "Rayonnement international et liens entre diaspora et Cameroun"
+      },
+      {
+        icon: Users,
+        title: "ASMADLA",
+        description: "Vice-présidente pionnière de l'Association Mandjara de Douala"
+      },
+      {
+        icon: HandHeart,
+        title: "Bongkisheri Littoral",
+        description: "Ancienne présidente, structuration communautaire et valorisation culturelle"
+      }
+    ],
+    quote: "Un engagement constant au service de la culture, de la mémoire collective et de l'unité des peuples."
+  }
+];
+
 // Categories structure
 const teamCategories: TeamCategory[] = [
   {
@@ -343,7 +380,7 @@ const teamCategories: TeamCategory[] = [
     title: "Membres d'honneur",
     subtitle: "Reconnus pour leur contribution exceptionnelle",
     icon: Award,
-    members: []
+    members: membresHonneur
   },
   {
     id: "conseil-administration",
