@@ -70,7 +70,7 @@ export const Header = () => {
               <img 
                 src={mandjaraLogo} 
                 alt="International Mandjara Heritage" 
-                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" 
+                className="h-20 w-auto transition-transform duration-300 group-hover:scale-105" 
               />
             </div>
           </Link>
@@ -84,7 +84,7 @@ export const Header = () => {
                 className={`relative text-sm tracking-wide group transition-colors duration-300 ${
                   isActive(link.href)
                     ? 'text-heritage-gold font-semibold'
-                    : 'text-heritage-cream/80 hover:text-heritage-gold font-medium'
+                    : 'text-white hover:text-heritage-gold font-medium'
                 }`}
               >
                 {link.name}
@@ -104,7 +104,7 @@ export const Header = () => {
                 className={`relative text-sm tracking-wide group transition-colors duration-300 flex items-center gap-1 ${
                   isTeamActive()
                     ? 'text-heritage-gold font-semibold'
-                    : 'text-heritage-cream/80 hover:text-heritage-gold font-medium'
+                    : 'text-white hover:text-heritage-gold font-medium'
                 }`}
               >
                 Notre Équipe
