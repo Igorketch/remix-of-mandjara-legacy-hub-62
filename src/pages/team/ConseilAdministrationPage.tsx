@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { Building2, Crown, GraduationCap, Users, Leaf, Heart, Award, HeartPulse } from 'lucide-react';
+import { Building2, Crown, GraduationCap, Users, Leaf, Heart, Award, HeartPulse, Globe, HandHeart } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
 import { TeamMemberCard, TeamMember } from '@/components/team/TeamMemberCard';
 import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import charlottePortrait from '@/assets/charlotte-portrait.jpg';
+import evelinePortrait from '@/assets/eveline-kinyuy-portrait.jpg';
 
 const conseilAdministration: TeamMember[] = [
   {
@@ -97,6 +98,38 @@ const conseilAdministration: TeamMember[] = [
       }
     ],
     quote: "La croissance personnelle et collective est un processus évolutif nourri par chaque étape de la vie."
+  },
+  {
+    name: "Reine Mère Eveline Kinyuy",
+    role: "Membre du CA • Vice-Présidente Liaison Nso'",
+    portrait: evelinePortrait,
+    bio: [
+      "La Reine Mère Eveline Kinyuy est une leader communautaire respectée et une figure culturelle engagée, établie à Brampton, en Ontario (Canada). Elle œuvre activement dans les domaines de l'éducation, du soutien communautaire, de la préservation du patrimoine culturel et de la transmission intergénérationnelle des valeurs au sein des communautés africaines et de la diaspora.",
+      "Titulaire d'un Master en sciences de l'éducation et d'un diplôme en sociologie, elle possède une formation en tant que conseillère d'orientation et préposée aux services de soutien à la personne. Au sein de l'International Mandjara Heritage, elle est membre du Conseil d'administration et du Bureau exécutif, où elle occupe le poste de Vice-présidente chargée de la liaison avec la communauté Nso'."
+    ],
+    achievements: [
+      {
+        icon: Crown,
+        title: "Reine Mère",
+        description: "Leader communautaire respectée et figure culturelle engagée"
+      },
+      {
+        icon: GraduationCap,
+        title: "Master Éducation",
+        description: "Master en sciences de l'éducation et diplôme en sociologie"
+      },
+      {
+        icon: Building2,
+        title: "Membre du CA",
+        description: "Membre du Conseil d'administration d'International Mandjara Heritage"
+      },
+      {
+        icon: HandHeart,
+        title: "Engagement Communautaire",
+        description: "Membre active de Bongkisheri Douala, Nso Family Union Canada et Mandjara du Canada"
+      }
+    ],
+    quote: "Un parcours dédié à la préservation du patrimoine, à la transmission intergénérationnelle, à la mémoire collective et au service communautaire."
   }
 ];
 
