@@ -11,6 +11,7 @@ import sylviePortrait from '@/assets/sylvie-portrait.jpg';
 import charlottePortrait from '@/assets/charlotte-portrait.jpg';
 import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
 import elizabethPortrait from '@/assets/elizabeth-mbanka.png';
+import evelinePortrait from '@/assets/eveline-kinyuy-portrait.jpg';
 
 interface Achievement {
   icon: React.ElementType;
@@ -127,6 +128,22 @@ const conseilAdministration: TeamMember[] = [
       }
     ],
     quote: "La croissance personnelle et collective est un processus évolutif nourri par chaque étape de la vie."
+  },
+  {
+    name: "Reine Mère Eveline Kinyuy",
+    role: "Membre du CA • Vice-Présidente Liaison Nso'",
+    portrait: evelinePortrait,
+    bio: [
+      "La Reine Mère Eveline Kinyuy est une leader communautaire respectée et une figure culturelle engagée, établie à Brampton, en Ontario (Canada). Elle œuvre activement dans les domaines de l'éducation, du soutien communautaire, de la préservation du patrimoine culturel et de la transmission intergénérationnelle des valeurs.",
+      "Au sein de l'International Mandjara Heritage, elle est membre du Conseil d'administration et du Bureau exécutif, où elle occupe le poste de Vice-présidente chargée de la liaison avec la communauté Nso'."
+    ],
+    achievements: [
+      { icon: Crown, title: "Reine Mère", description: "Leader communautaire respectée et figure culturelle engagée" },
+      { icon: GraduationCap, title: "Master Éducation", description: "Master en sciences de l'éducation et diplôme en sociologie" },
+      { icon: Building2, title: "Membre du CA", description: "Membre du Conseil d'administration d'International Mandjara Heritage" },
+      { icon: HandHeart, title: "Engagement Communautaire", description: "Membre active de Bongkisheri Douala, Nso Family Union Canada et Mandjara du Canada" }
+    ],
+    quote: "Un parcours dédié à la préservation du patrimoine, à la transmission intergénérationnelle et au service communautaire."
   }
 ];
 
@@ -394,7 +411,24 @@ const teamCategories: TeamCategory[] = [
     title: "Bureau Exécutif",
     subtitle: "Coordination opérationnelle des activités",
     icon: Briefcase,
-    members: []
+    members: [
+      {
+        name: "Reine Mère Eveline Kinyuy",
+        role: "Vice-Présidente • Liaison Communauté Nso'",
+        portrait: evelinePortrait,
+        bio: [
+          "La Reine Mère Eveline Kinyuy est une leader communautaire respectée et une figure culturelle engagée, établie à Brampton, en Ontario (Canada).",
+          "Au sein du Bureau exécutif, elle joue un rôle clé dans la préservation du patrimoine culturel et la liaison avec la communauté Nso'."
+        ],
+        achievements: [
+          { icon: Crown, title: "Reine Mère", description: "Leader communautaire respectée" },
+          { icon: Briefcase, title: "Vice-Présidente", description: "Chargée de la liaison avec la communauté Nso'" },
+          { icon: GraduationCap, title: "Master Éducation", description: "Sciences de l'éducation et sociologie" },
+          { icon: HandHeart, title: "Engagement Communautaire", description: "Bongkisheri Douala, Nso Family Union Canada, Mandjara du Canada" }
+        ],
+        quote: "Un parcours dédié à la préservation du patrimoine et au service communautaire."
+      }
+    ]
   },
   {
     id: "representants-nationaux",
