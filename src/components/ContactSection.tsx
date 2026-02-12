@@ -80,7 +80,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-heritage-cream mb-1">Email</h4>
-                    <p className="text-heritage-cream/70">mefire@internationalmandjaraheritage.org</p>
+                    <p className="text-heritage-cream/70">info@internationalmandjaraheritage.org</p>
                   </div>
                 </div>
 
