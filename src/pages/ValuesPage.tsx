@@ -1,73 +1,56 @@
 import { motion } from 'framer-motion';
 import { Lightbulb, MessageCircle, Heart, Shield, Leaf, Sparkles, TrendingUp, Users, Globe } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
-
-const values = [
-  {
-    icon: Lightbulb,
-    name: 'Créativité',
-    description: 'Les solutions émergent de l\'innovation et de la production d\'idées nouvelles.',
-    longDescription: 'Nous croyons que l\'innovation culturelle est le moteur du progrès. La créativité nous permet de trouver des solutions uniques aux défis contemporains tout en honorant nos traditions ancestrales.',
-    color: 'heritage-gold',
-  },
-  {
-    icon: MessageCircle,
-    name: 'Dialogue',
-    description: 'L\'écoute, le respect et la coopération sont au cœur des relations humaines.',
-    longDescription: 'Le dialogue interculturel est la base de notre action. Nous favorisons les échanges respectueux entre les communautés, les générations et les cultures pour construire des ponts durables.',
-    color: 'heritage-terracotta',
-  },
-  {
-    icon: Heart,
-    name: 'Solidarité',
-    description: 'La culture et l\'humanité étant interdépendantes, il est de notre devoir de préserver la cohésion culturelle.',
-    longDescription: 'La solidarité communautaire est notre force. Ensemble, nous soutenons les membres de nos communautés et travaillons pour le bien-être collectif, ici et dans nos pays d\'origine.',
-    color: 'heritage-forest',
-  },
-  {
-    icon: Shield,
-    name: 'Transparence',
-    description: 'Les informations relatives aux activités de l\'International Mandjara Heritage sont rendues accessibles au public.',
-    longDescription: 'Nous nous engageons à une gouvernance transparente et responsable. Chaque action, chaque décision est documentée et partagée avec notre communauté.',
-    color: 'heritage-bronze',
-  },
-  {
-    icon: Leaf,
-    name: 'Durabilité Culturelle',
-    description: 'En cohérence avec les trois autres piliers du développement durable, la culture est le ciment qui unit identité, progrès et environnement.',
-    longDescription: 'La culture n\'est pas un luxe mais une nécessité. Elle est le quatrième pilier du développement durable, indissociable des dimensions économique, sociale et environnementale.',
-    color: 'heritage-gold',
-  },
-];
-
-const pillars = [
-  { 
-    name: 'Économique', 
-    icon: TrendingUp,
-    color: 'bg-heritage-gold',
-    description: 'Développement économique responsable et inclusif'
-  },
-  { 
-    name: 'Social', 
-    icon: Users,
-    color: 'bg-heritage-terracotta',
-    description: 'Justice sociale et équité pour tous'
-  },
-  { 
-    name: 'Environnemental', 
-    icon: Leaf,
-    color: 'bg-heritage-forest',
-    description: 'Protection de notre planète et de ses ressources'
-  },
-  { 
-    name: 'Culturel', 
-    icon: Globe,
-    color: 'bg-heritage-bronze',
-    description: 'Préservation et transmission du patrimoine'
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ValuesPage = () => {
+  const { t } = useLanguage();
+
+  const values = [
+    {
+      icon: Lightbulb,
+      name: t('values.creativity'),
+      description: t('values.creativity_desc'),
+      longDescription: t('values.creativity_long'),
+      color: 'heritage-gold',
+    },
+    {
+      icon: MessageCircle,
+      name: t('values.dialogue'),
+      description: t('values.dialogue_desc'),
+      longDescription: t('values.dialogue_long'),
+      color: 'heritage-terracotta',
+    },
+    {
+      icon: Heart,
+      name: t('values.solidarity'),
+      description: t('values.solidarity_desc'),
+      longDescription: t('values.solidarity_long'),
+      color: 'heritage-forest',
+    },
+    {
+      icon: Shield,
+      name: t('values.transparency'),
+      description: t('values.transparency_desc'),
+      longDescription: t('values.transparency_long'),
+      color: 'heritage-bronze',
+    },
+    {
+      icon: Leaf,
+      name: t('values.sustainability'),
+      description: t('values.sustainability_desc'),
+      longDescription: t('values.sustainability_long'),
+      color: 'heritage-gold',
+    },
+  ];
+
+  const pillars = [
+    { name: t('values.pillar.economic'), icon: TrendingUp, color: 'bg-heritage-gold', description: t('values.pillar.economic_desc') },
+    { name: t('values.pillar.social'), icon: Users, color: 'bg-heritage-terracotta', description: t('values.pillar.social_desc') },
+    { name: t('values.pillar.environmental'), icon: Leaf, color: 'bg-heritage-forest', description: t('values.pillar.environmental_desc') },
+    { name: t('values.pillar.cultural'), icon: Globe, color: 'bg-heritage-bronze', description: t('values.pillar.cultural_desc') },
+  ];
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -85,14 +68,13 @@ const ValuesPage = () => {
           >
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-heritage-terracotta/20 border border-heritage-terracotta/30 backdrop-blur-sm mb-8">
               <Sparkles className="w-4 h-4 text-heritage-terracotta" />
-              <span className="text-heritage-terracotta text-sm font-medium">Nos Valeurs Fondamentales</span>
+              <span className="text-heritage-terracotta text-sm font-medium">{t('values.badge')}</span>
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
-              Les Principes Qui <span className="text-heritage-gold">Nous Guident</span>
+              {t('values.title')} <span className="text-heritage-gold">{t('values.title_highlight')}</span>
             </h1>
             <p className="text-muted-foreground text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-              Nos valeurs sont le fondement de chaque décision, comportement et action de 
-              l'International Mandjara Heritage.
+              {t('values.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -115,15 +97,9 @@ const ValuesPage = () => {
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-${value.color}/10 text-${value.color} mb-6 transition-all duration-300 group-hover:scale-110`}>
                     <value.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
-                    {value.name}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {value.description}
-                  </p>
-                  <p className="text-sm text-muted-foreground/80 leading-relaxed border-t border-border/50 pt-4">
-                    {value.longDescription}
-                  </p>
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-3">{value.name}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{value.description}</p>
+                  <p className="text-sm text-muted-foreground/80 leading-relaxed border-t border-border/50 pt-4">{value.longDescription}</p>
                 </motion.div>
               ))}
             </div>
@@ -143,12 +119,10 @@ const ValuesPage = () => {
               className="text-center mb-16"
             >
               <h2 className="font-serif text-3xl lg:text-5xl font-bold text-heritage-cream mb-6">
-                Les Quatre Piliers du <span className="text-heritage-gold">Développement Durable</span>
+                {t('values.pillars_title')} <span className="text-heritage-gold">{t('values.pillars_highlight')}</span>
               </h2>
               <p className="text-heritage-cream/70 text-lg max-w-2xl mx-auto">
-                L'International Mandjara Heritage reconnaît la culture comme le quatrième pilier 
-                indispensable au développement durable, aux côtés des dimensions économique, 
-                sociale et environnementale.
+                {t('values.pillars_subtitle')}
               </p>
             </motion.div>
 
@@ -164,12 +138,8 @@ const ValuesPage = () => {
                 >
                   <div className={`${pillar.color} rounded-2xl p-8 text-center transition-transform duration-300 group-hover:-translate-y-2 h-full`}>
                     <pillar.icon className="w-12 h-12 text-heritage-cream mx-auto mb-4" />
-                    <h3 className="font-serif font-bold text-heritage-cream text-xl mb-3">
-                      {pillar.name}
-                    </h3>
-                    <p className="text-heritage-cream/80 text-sm">
-                      {pillar.description}
-                    </p>
+                    <h3 className="font-serif font-bold text-heritage-cream text-xl mb-3">{pillar.name}</h3>
+                    <p className="text-heritage-cream/80 text-sm">{pillar.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -185,15 +155,11 @@ const ValuesPage = () => {
               <blockquote className="relative max-w-3xl mx-auto">
                 <div className="absolute -top-6 left-0 text-7xl text-heritage-gold/20 font-serif">"</div>
                 <p className="text-xl lg:text-2xl font-serif text-heritage-cream italic leading-relaxed pl-8">
-                  La culture n'est pas un supplément d'âme, mais le ciment qui unit identité, 
-                  progrès et environnement dans une vision holistique du développement intégrant 
-                  durabilité, paix et bien-être des sociétés.
+                  {t('values.quote')}
                 </p>
                 <footer className="mt-6 flex items-center justify-center gap-4">
                   <div className="w-12 h-px bg-heritage-gold" />
-                  <cite className="text-heritage-cream/60 not-italic font-medium">
-                    UNESCO (2005)
-                  </cite>
+                  <cite className="text-heritage-cream/60 not-italic font-medium">{t('values.quote_author')}</cite>
                 </footer>
               </blockquote>
             </motion.div>
