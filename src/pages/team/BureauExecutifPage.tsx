@@ -1,10 +1,44 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Crown, GraduationCap, Building2, HandHeart, Users } from 'lucide-react';
+import { Briefcase, Crown, GraduationCap, Building2, HandHeart, Users, Globe, Stethoscope, Sparkles, Heart, Leaf, Award, ScrollText } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
 import { TeamMemberCard, TeamMember } from '@/components/team/TeamMemberCard';
+import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
 import evelinePortrait from '@/assets/eveline-kinyuy-portrait.jpg';
+import aichetouPortrait from '@/assets/aichetou-portrait.png';
 
 const bureauExecutif: TeamMember[] = [
+  {
+    name: "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju'",
+    role: "Présidente",
+    portrait: lauretinePortrait,
+    bio: [
+      "Dre Laurentine Mouchingam Mefire Nguwuo' Petuenju' est une experte internationale en égalité des genres, équité, diversité et inclusion (EEDI), anthropologue de formation et leader engagée en développement international, justice sociale et leadership inclusif. Elle cumule plus de quinze années d'expérience au sein d'institutions gouvernementales, académiques et communautaires.",
+      "Fondatrice de l'International Mandjara Heritage, elle siège à la fois au Conseil d'administration et au Bureau exécutif, assurant l'orientation stratégique, la gouvernance et le rayonnement international de l'organisation. Conférencière, auteure et activiste communautaire, elle œuvre à la décolonisation des savoirs et au dialogue entre les communautés africaines et diasporiques."
+    ],
+    achievements: [
+      {
+        icon: Stethoscope,
+        title: "Experte EEDI",
+        description: "Experte internationale en égalité des genres, équité, diversité et inclusion"
+      },
+      {
+        icon: GraduationCap,
+        title: "Anthropologue",
+        description: "Formation en anthropologie et développement international"
+      },
+      {
+        icon: Globe,
+        title: "Leadership International",
+        description: "Plus de 15 années d'expérience au sein d'institutions gouvernementales et académiques"
+      },
+      {
+        icon: Sparkles,
+        title: "Fondatrice",
+        description: "Fondatrice de l'International Mandjara Heritage"
+      }
+    ],
+    quote: "Œuvrer à la décolonisation des savoirs et au dialogue entre les communautés africaines et diasporiques."
+  },
   {
     name: "Reine Mère Eveline Kinyuy",
     role: "Vice-Présidente • Liaison Communauté Nso'",
@@ -37,6 +71,54 @@ const bureauExecutif: TeamMember[] = [
       }
     ],
     quote: "Un parcours dédié à la préservation du patrimoine, à la transmission intergénérationnelle, à la mémoire collective et au service communautaire."
+  },
+  {
+    name: "Nathalie Sandrine Kouotou",
+    role: "Secrétaire Générale",
+    portrait: "",
+    bio: [
+      "Nathalie Sandrine Kouotou occupe le poste de Secrétaire Générale au sein du Bureau exécutif de l'International Mandjara Heritage. Elle contribue à la coordination administrative et organisationnelle des activités de l'organisation."
+    ],
+    achievements: [
+      {
+        icon: ScrollText,
+        title: "Secrétaire Générale",
+        description: "Coordination administrative et organisationnelle du Bureau exécutif"
+      },
+      {
+        icon: Building2,
+        title: "Gestion Administrative",
+        description: "Suivi des dossiers et organisation des réunions"
+      }
+    ],
+    quote: "Contribuer à la coordination et au bon fonctionnement de l'organisation pour mieux servir notre mission."
+  },
+  {
+    name: "Madame Aïchetou Fafa Pouyona",
+    role: "Trésorière (Bamoun)",
+    portrait: aichetouPortrait,
+    bio: [
+      "Entrepreneure engagée et leader innovante, Madame Aïchetou est spécialisée dans la valorisation durable des ressources naturelles africaines, avec plus de quinze années d'expérience dans l'agroalimentaire, le bien-être, la formation et le développement d'entreprises.",
+      "Au sein du Bureau exécutif, elle assure la gestion financière et la transparence budgétaire de l'organisation, mettant son expertise entrepreneuriale au service de la mission patrimoniale de Mandjara Heritage."
+    ],
+    achievements: [
+      {
+        icon: Award,
+        title: "Trésorière",
+        description: "Gestion financière et transparence budgétaire de l'organisation"
+      },
+      {
+        icon: Leaf,
+        title: "Entrepreneure",
+        description: "Plus de 15 ans d'expérience dans la valorisation des ressources naturelles africaines"
+      },
+      {
+        icon: Heart,
+        title: "Communauté Bamoun",
+        description: "Représentante de la communauté Bamoun au sein du Bureau exécutif"
+      }
+    ],
+    quote: "Mettre l'entrepreneuriat au service de la préservation du patrimoine culturel africain."
   }
 ];
 
