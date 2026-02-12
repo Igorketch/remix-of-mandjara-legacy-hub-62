@@ -181,7 +181,7 @@ const teamMembers: TeamMember[] = [
     quote: "Un engagement constant en faveur de l'éducation, de la préservation culturelle et de la valorisation des voix africaines."
   },
   {
-    name: "Ousmanou NGAM",
+    name: "Nji Ousmanou NGAM",
     role: "Membre • Leader Entrepreneurial",
     portrait: ousmanouPortrait,
     bio: [
