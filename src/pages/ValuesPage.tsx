@@ -186,12 +186,13 @@ const ValuesPage = () => {
                 <div className="absolute -top-6 left-0 text-7xl text-heritage-gold/20 font-serif">"</div>
                 <p className="text-xl lg:text-2xl font-serif text-heritage-cream italic leading-relaxed pl-8">
                   La culture n'est pas un supplément d'âme, mais le ciment qui unit identité, 
-                  progrès et environnement dans une vision holistique du développement.
+                  progrès et environnement dans une vision holistique du développement intégrant 
+                  durabilité, paix et bien-être des sociétés.
                 </p>
                 <footer className="mt-6 flex items-center justify-center gap-4">
                   <div className="w-12 h-px bg-heritage-gold" />
                   <cite className="text-heritage-cream/60 not-italic font-medium">
-                    CGLU - Agenda 21 de la Culture
+                    UNESCO (2005)
                   </cite>
                 </footer>
               </blockquote>
