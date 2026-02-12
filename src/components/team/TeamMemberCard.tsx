@@ -41,11 +41,17 @@ export const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
             
             {/* Portrait */}
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-heritage-gold/30 shadow-heritage">
-              <img
-                src={member.portrait}
-                alt={member.name}
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
+              {member.portrait ? (
+                <img
+                  src={member.portrait}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full bg-heritage-earth/80 flex items-center justify-center">
+                  <span className="text-6xl font-display text-heritage-gold/40">{member.name.charAt(0)}</span>
+                </div>
+              )}
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-heritage-earth/90 via-transparent to-transparent" />
               
