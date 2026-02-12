@@ -46,7 +46,7 @@ export const Footer = () => {
             </Link>
             <p className="text-heritage-cream/60 leading-relaxed mb-6 max-w-md">
               Préserver et transmettre le patrimoine culturel, historique et social 
-              des peuples Bamoun, Bafia et Nso' pour les générations futures.
+              des peuples Bamoun, Nso' et Bafia pour les générations futures.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
