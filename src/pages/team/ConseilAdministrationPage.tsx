@@ -71,6 +71,7 @@ const conseilAdministration: TeamMember[] = [
     name: "Charlotte Wirsiy",
     role: "Membre du CA • Représentante Nso'",
     portrait: charlottePortrait,
+    portraitPosition: 'center 20%',
     bio: [
       "Madame Charlotte Wirsiy est une professionnelle engagée et une actrice communautaire investie dans les domaines du développement durable, de la résilience communautaire et du soin aux personnes. Née et élevée au Cameroun, elle a grandi dans un environnement marqué par la famille, la solidarité et un fort sentiment d'appartenance communautaire.",
       "Titulaire d'un master en gestion des catastrophes et développement durable, elle s'est ensuite reconvertie vers les sciences infirmières au Canada, alignant son parcours avec sa vocation de service et d'accompagnement humain. Au sein d'International Mandjara Heritage, elle contribue à la promotion du dialogue interculturel et à la valorisation des patrimoines culturels dans une perspective inclusive et intergénérationnelle."
