@@ -5,39 +5,42 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Users, Target, Heart, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
-const sections = [
-  {
-    title: 'Notre Histoire',
-    description: 'Découvrez les racines profondes de l\'International Mandjara Heritage et son ancrage dans la culture du peuple Mandjara.',
-    icon: BookOpen,
-    href: '/context',
-    color: 'heritage-gold',
-  },
-  {
-    title: 'Les Trois Peuples',
-    description: 'Explorez l\'héritage culturel des Bamoun, Nso\' et Bafia, les trois grands peuples fondateurs.',
-    icon: Users,
-    href: '/peoples',
-    color: 'heritage-terracotta',
-  },
-  {
-    title: 'Notre Mission',
-    description: 'Promouvoir, préserver et transmettre le patrimoine culturel pour les générations futures.',
-    icon: Target,
-    href: '/mission',
-    color: 'heritage-forest',
-  },
-  {
-    title: 'Nos Valeurs',
-    description: 'Les principes fondamentaux qui guident chaque décision et action de notre organisation.',
-    icon: Heart,
-    href: '/values',
-    color: 'heritage-bronze',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
+  const { t } = useLanguage();
+
+  const sections = [
+    {
+      title: t('index.card.history'),
+      description: t('index.card.history_desc'),
+      icon: BookOpen,
+      href: '/context',
+      color: 'heritage-gold',
+    },
+    {
+      title: t('index.card.peoples'),
+      description: t('index.card.peoples_desc'),
+      icon: Users,
+      href: '/peoples',
+      color: 'heritage-terracotta',
+    },
+    {
+      title: t('index.card.mission'),
+      description: t('index.card.mission_desc'),
+      icon: Target,
+      href: '/mission',
+      color: 'heritage-forest',
+    },
+    {
+      title: t('index.card.values'),
+      description: t('index.card.values_desc'),
+      icon: Heart,
+      href: '/values',
+      color: 'heritage-bronze',
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -56,14 +59,13 @@ const Index = () => {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-heritage-gold/10 text-heritage-gold text-sm font-medium mb-4">
                 <Sparkles className="w-4 h-4" />
-                Explorez Notre Héritage
+                {t('index.explore_badge')}
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Découvrez Notre <span className="text-heritage-gold">Organisation</span>
+                {t('index.explore_title')} <span className="text-heritage-gold">{t('index.explore_title_highlight')}</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Naviguez à travers les différentes sections pour en apprendre davantage sur 
-                notre mission, nos valeurs et notre engagement culturel.
+                {t('index.explore_subtitle')}
               </p>
             </motion.div>
 
@@ -88,7 +90,7 @@ const Index = () => {
                         {section.description}
                       </p>
                       <div className="flex items-center text-heritage-gold font-medium text-sm group-hover:gap-3 gap-2 transition-all duration-300">
-                        En savoir plus
+                        {t('index.learn_more')}
                         <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
@@ -110,13 +112,13 @@ const Index = () => {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-heritage-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                   <div className="relative z-10">
                     <h3 className="font-serif text-2xl lg:text-3xl font-bold text-heritage-cream mb-3">
-                      Notre Équipe
+                      {t('index.team_title')}
                     </h3>
                     <p className="text-heritage-cream/70 mb-6">
-                      Rencontrez les leaders engagés qui portent la vision de l'International Mandjara Heritage.
+                      {t('index.team_desc')}
                     </p>
                     <div className="flex items-center text-heritage-gold font-medium group-hover:gap-3 gap-2 transition-all duration-300">
-                      Découvrir l'équipe
+                      {t('index.team_link')}
                       <ArrowRight className="w-5 h-5" />
                     </div>
                   </div>
@@ -128,13 +130,13 @@ const Index = () => {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                   <div className="relative z-10">
                     <h3 className="font-serif text-2xl lg:text-3xl font-bold text-heritage-cream mb-3">
-                      Rejoignez-nous
+                      {t('index.join_title')}
                     </h3>
                     <p className="text-heritage-cream/90 mb-6">
-                      Contactez-nous pour contribuer à la préservation de notre patrimoine culturel.
+                      {t('index.join_desc')}
                     </p>
                     <div className="flex items-center text-heritage-cream font-medium group-hover:gap-3 gap-2 transition-all duration-300">
-                      Nous contacter
+                      {t('index.join_link')}
                       <ArrowRight className="w-5 h-5" />
                     </div>
                   </div>

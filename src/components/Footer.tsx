@@ -1,36 +1,39 @@
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 import mandjaraLogo from '@/assets/mandjara-logo.png';
 
-const footerLinks = {
-  organisation: [
-    { name: 'Notre Histoire', href: '/context' },
-    { name: 'Les Peuples', href: '/peoples' },
-    { name: 'Mission & Vision', href: '/mission' },
-    { name: 'Nos Valeurs', href: '/values' },
-    { name: 'Notre Équipe', href: '/team' },
-  ],
-  ressources: [
-    { name: 'Publications', href: '#' },
-    { name: 'Événements', href: '#' },
-    { name: 'Galerie', href: '#' },
-    { name: 'Partenaires', href: '#' },
-  ],
-  legal: [
-    { name: 'Mentions légales', href: '#' },
-    { name: 'Politique de confidentialité', href: '#' },
-    { name: 'Conditions d\'utilisation', href: '#' },
-  ],
-};
-
-const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-];
-
 export const Footer = () => {
+  const { t } = useLanguage();
+
+  const footerLinks = {
+    organisation: [
+      { name: t('nav.history'), href: '/context' },
+      { name: t('nav.peoples'), href: '/peoples' },
+      { name: t('nav.mission'), href: '/mission' },
+      { name: t('nav.values'), href: '/values' },
+      { name: t('nav.team'), href: '/team' },
+    ],
+    ressources: [
+      { name: t('footer.publications'), href: '#' },
+      { name: t('footer.events'), href: '#' },
+      { name: t('footer.gallery'), href: '#' },
+      { name: t('footer.partners'), href: '#' },
+    ],
+    legal: [
+      { name: t('footer.legal_notices'), href: '#' },
+      { name: t('footer.privacy'), href: '#' },
+      { name: t('footer.terms'), href: '#' },
+    ],
+  };
+
+  const socialLinks = [
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  ];
+
   return (
     <footer className="bg-heritage-earth border-t border-heritage-cream/10">
       <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20">
@@ -38,15 +41,10 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <img 
-                src={mandjaraLogo} 
-                alt="International Mandjara Heritage" 
-                className="h-16 w-auto" 
-              />
+              <img src={mandjaraLogo} alt="International Mandjara Heritage" className="h-16 w-auto" />
             </Link>
             <p className="text-heritage-cream/60 leading-relaxed mb-6 max-w-md">
-              Préserver et transmettre le patrimoine culturel, historique et social 
-              des peuples Bamoun, Nso' et Bafia pour les générations futures.
+              {t('footer.description')}
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -64,39 +62,24 @@ export const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-serif font-bold text-heritage-cream mb-4">Organisation</h4>
+            <h4 className="font-serif font-bold text-heritage-cream mb-4">{t('footer.organisation')}</h4>
             <ul className="space-y-3">
               {footerLinks.organisation.map((link) => (
                 <li key={link.name}>
-                  {link.href.startsWith('/') ? (
-                    <Link
-                      to={link.href}
-                      className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  )}
+                  <Link to={link.href} className="text-heritage-cream/60 hover:text-heritage-gold transition-colors">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-serif font-bold text-heritage-cream mb-4">Ressources</h4>
+            <h4 className="font-serif font-bold text-heritage-cream mb-4">{t('footer.resources')}</h4>
             <ul className="space-y-3">
               {footerLinks.ressources.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
-                  >
+                  <a href={link.href} className="text-heritage-cream/60 hover:text-heritage-gold transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -105,14 +88,11 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-serif font-bold text-heritage-cream mb-4">Légal</h4>
+            <h4 className="font-serif font-bold text-heritage-cream mb-4">{t('footer.legal')}</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-heritage-cream/60 hover:text-heritage-gold transition-colors"
-                  >
+                  <a href={link.href} className="text-heritage-cream/60 hover:text-heritage-gold transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -125,10 +105,10 @@ export const Footer = () => {
         <div className="mt-16 pt-8 border-t border-heritage-cream/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-heritage-cream/40 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} International Mandjara Heritage. Tous droits réservés.
+              © {new Date().getFullYear()} International Mandjara Heritage. {t('footer.rights')}
             </p>
             <p className="text-heritage-cream/40 text-sm">
-              Préservons notre héritage ensemble 🌍
+              {t('footer.tagline')}
             </p>
           </div>
         </div>
