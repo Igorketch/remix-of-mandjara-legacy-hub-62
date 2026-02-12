@@ -14,7 +14,7 @@ const navLinks = [{
   name: 'Peuples',
   href: '/peoples'
 }, {
-  name: 'Mission',
+  name: 'Mission & Vision',
   href: '/mission'
 }, {
   name: 'Valeurs',
