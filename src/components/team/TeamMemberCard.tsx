@@ -10,6 +10,7 @@ export interface TeamMember {
   name: string;
   role: string;
   portrait: string;
+  portraitPosition?: string;
   bio: string[];
   achievements: Achievement[];
   quote: string;
@@ -45,7 +46,8 @@ export const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
                 <img
                   src={member.portrait}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ objectPosition: member.portraitPosition || 'top' }}
                 />
               ) : (
                 <div className="w-full h-full bg-heritage-earth/80 flex items-center justify-center">
