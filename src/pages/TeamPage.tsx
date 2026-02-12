@@ -314,7 +314,7 @@ const comiteSages: TeamMember[] = [
     quote: "Un leadership fondé sur le service, la foi, la responsabilité sociale et l'impact durable."
   },
   {
-    name: "Ousmanou NGAM",
+    name: "Nji Ousmanou NGAM",
     role: "Conseiller",
     portrait: ousmanouPortrait,
     bio: [
