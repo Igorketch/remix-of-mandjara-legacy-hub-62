@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Star, Users } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ParrainsPage = () => {
+  const { t } = useLanguage();
+
   return (
     <PageLayout>
       <section className="py-20 bg-gradient-to-b from-heritage-earth to-heritage-earth/95">
@@ -16,13 +19,13 @@ const ParrainsPage = () => {
           >
             <div className="inline-flex items-center gap-2 bg-heritage-gold/10 border border-heritage-gold/30 rounded-full px-4 py-2 mb-6">
               <Star className="w-4 h-4 text-heritage-gold" />
-              <span className="text-heritage-gold text-sm font-medium">Notre Équipe</span>
+              <span className="text-heritage-gold text-sm font-medium">{t('team.badge')}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-heritage-cream mb-6">
-              Parrains
+              {t('team.cat.parrains')}
             </h1>
             <p className="text-xl text-heritage-cream/70 max-w-2xl mx-auto">
-              Personnalités de marque soutenant notre mission
+              {t('team.cat.parrains_sub')}
             </p>
           </motion.div>
 
@@ -37,10 +40,10 @@ const ParrainsPage = () => {
               <Users className="w-10 h-10 text-heritage-gold/50" />
             </div>
             <h3 className="text-2xl font-display font-semibold text-heritage-cream mb-4">
-              Section à venir
+              {t('team.parrains.coming_title')}
             </h3>
             <p className="text-heritage-cream/60 max-w-md mx-auto">
-              Les parrains de l'International Mandjara Heritage seront présentés prochainement.
+              {t('team.parrains.coming_desc')}
             </p>
           </motion.div>
         </div>

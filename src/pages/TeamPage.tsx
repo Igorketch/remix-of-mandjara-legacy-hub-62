@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Users, Award, Building2, Heart, Leaf, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette, HeartPulse, Star, UserCheck } from 'lucide-react';
 import { PageLayout } from '@/components/PageLayout';
+import { useLanguage, Language } from '@/contexts/LanguageContext';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
@@ -384,34 +385,12 @@ const membresHonneur: TeamMember[] = [
 ];
 
 // Categories structure
-const teamCategories: TeamCategory[] = [
-  {
-    id: "parrains",
-    title: "Parrains",
-    subtitle: "Personnalités de marque soutenant notre mission",
-    icon: Star,
-    members: []
-  },
-  {
-    id: "membres-honneur",
-    title: "Membres d'honneur",
-    subtitle: "Reconnus pour leur contribution exceptionnelle",
-    icon: Award,
-    members: membresHonneur
-  },
-  {
-    id: "conseil-administration",
-    title: "Conseil d'Administration",
-    subtitle: "Direction stratégique et gouvernance de l'organisation",
-    icon: Building2,
-    members: conseilAdministration
-  },
-  {
-    id: "bureau-executif",
-    title: "Bureau Exécutif",
-    subtitle: "Coordination opérationnelle des activités",
-    icon: Briefcase,
-    members: [
+const teamCategoriesData: Record<Language, TeamCategory[]> = {
+  fr: [
+    { id: "parrains", title: "Parrains", subtitle: "Personnalités de marque soutenant notre mission", icon: Star, members: [] },
+    { id: "membres-honneur", title: "Membres d'honneur", subtitle: "Reconnus pour leur contribution exceptionnelle", icon: Award, members: membresHonneur },
+    { id: "conseil-administration", title: "Conseil d'Administration", subtitle: "Direction stratégique et gouvernance de l'organisation", icon: Building2, members: conseilAdministration },
+    { id: "bureau-executif", title: "Bureau Exécutif", subtitle: "Coordination opérationnelle des activités", icon: Briefcase, members: [
       {
         name: "Reine Mère Eveline Kinyuy",
         role: "Vice-Présidente • Liaison Communauté Nso'",
@@ -428,23 +407,36 @@ const teamCategories: TeamCategory[] = [
         ],
         quote: "Un parcours dédié à la préservation du patrimoine et au service communautaire."
       }
-    ]
-  },
-  {
-    id: "representants-nationaux",
-    title: "Représentants nationaux",
-    subtitle: "Ambassadeurs du patrimoine Mandjara à travers le monde",
-    icon: Globe,
-    members: representantsNationaux
-  },
-  {
-    id: "comite-sages",
-    title: "Comité des Sages",
-    subtitle: "Gardiens de la sagesse et de la tradition",
-    icon: ScrollText,
-    members: comiteSages
-  }
-];
+    ]},
+    { id: "representants-nationaux", title: "Représentants nationaux", subtitle: "Ambassadeurs du patrimoine Mandjara à travers le monde", icon: Globe, members: representantsNationaux },
+    { id: "comite-sages", title: "Comité des Sages", subtitle: "Gardiens de la sagesse et de la tradition", icon: ScrollText, members: comiteSages }
+  ],
+  en: [
+    { id: "parrains", title: "Patrons", subtitle: "Distinguished figures supporting our mission", icon: Star, members: [] },
+    { id: "membres-honneur", title: "Honorary Members", subtitle: "Recognized for their outstanding contribution", icon: Award, members: membresHonneur },
+    { id: "conseil-administration", title: "Board of Directors", subtitle: "Strategic direction and governance of the organization", icon: Building2, members: conseilAdministration },
+    { id: "bureau-executif", title: "Executive Board", subtitle: "Operational coordination of activities", icon: Briefcase, members: [
+      {
+        name: "Queen Mother Eveline Kinyuy",
+        role: "Vice-President • Nso' Community Liaison",
+        portrait: evelinePortrait,
+        bio: [
+          "Queen Mother Eveline Kinyuy is a respected community leader and committed cultural figure, based in Brampton, Ontario (Canada).",
+          "Within the Executive Board, she plays a key role in cultural heritage preservation and liaison with the Nso' community."
+        ],
+        achievements: [
+          { icon: Crown, title: "Queen Mother", description: "Respected community leader" },
+          { icon: Briefcase, title: "Vice-President", description: "Responsible for liaison with the Nso' community" },
+          { icon: GraduationCap, title: "Master's in Education", description: "Education and Sociology" },
+          { icon: HandHeart, title: "Community Engagement", description: "Bongkisheri Douala, Nso Family Union Canada, Mandjara du Canada" }
+        ],
+        quote: "A journey dedicated to heritage preservation and community service."
+      }
+    ]},
+    { id: "representants-nationaux", title: "National Representatives", subtitle: "Ambassadors of Mandjara heritage around the world", icon: Globe, members: representantsNationaux },
+    { id: "comite-sages", title: "Council of Elders", subtitle: "Guardians of wisdom and tradition", icon: ScrollText, members: comiteSages }
+  ]
+};
 
 const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }) => {
   const isEven = index % 2 === 0;
@@ -546,6 +538,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
 };
 
 const CategorySection = ({ category, globalIndex }: { category: TeamCategory; globalIndex: number }) => {
+  const { t } = useLanguage();
   const IconComponent = category.icon;
   const hasMembers = category.members.length > 0;
   
@@ -558,7 +551,6 @@ const CategorySection = ({ category, globalIndex }: { category: TeamCategory; gl
       className="mb-20"
       id={category.id}
     >
-      {/* Category Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -580,7 +572,6 @@ const CategorySection = ({ category, globalIndex }: { category: TeamCategory; gl
         <div className="w-24 h-1 bg-heritage-gold/40 mx-auto mt-6 rounded-full" />
       </motion.div>
 
-      {/* Members or Placeholder */}
       {hasMembers ? (
         <div className="space-y-12">
           {category.members.map((member, index) => (
@@ -603,7 +594,7 @@ const CategorySection = ({ category, globalIndex }: { category: TeamCategory; gl
             <UserCheck className="w-8 h-8 text-heritage-gold/50" />
           </div>
           <p className="text-heritage-brown/50 text-lg italic">
-            Cette section sera complétée prochainement
+            {t('team.coming_soon')}
           </p>
         </motion.div>
       )}
@@ -612,6 +603,8 @@ const CategorySection = ({ category, globalIndex }: { category: TeamCategory; gl
 };
 
 const TeamPage = () => {
+  const { language, t } = useLanguage();
+  const teamCategories = teamCategoriesData[language];
   let globalIndex = 0;
   
   return (
@@ -631,14 +624,13 @@ const TeamPage = () => {
           >
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-heritage-gold/20 border border-heritage-gold/30 backdrop-blur-sm mb-8">
               <Users className="w-4 h-4 text-heritage-brown" />
-              <span className="text-heritage-brown text-sm font-medium">Notre Équipe</span>
+              <span className="text-heritage-brown text-sm font-medium">{t('team.badge')}</span>
             </span>
             <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-heritage-brown mb-6">
-              Leadership & <span className="text-heritage-terracotta">Gouvernance</span>
+              {t('team.hero_title')} <span className="text-heritage-terracotta">{t('team.hero_highlight')}</span>
             </h1>
             <p className="text-heritage-brown/70 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-              Des leaders engagés au service du patrimoine Mandjara, unis par une vision 
-              commune de préservation et de transmission culturelle.
+              {t('team.hero_subtitle')}
             </p>
           </motion.div>
         </div>
