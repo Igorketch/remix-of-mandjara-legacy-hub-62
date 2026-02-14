@@ -263,6 +263,32 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.terms': 'Conditions d\'utilisation',
     'footer.rights': 'Tous droits réservés.',
     'footer.tagline': 'Préservons notre héritage ensemble 🌍',
+
+    // Team Pages
+    'team.badge': 'Notre Équipe',
+    'team.hero_title': 'Leadership &',
+    'team.hero_highlight': 'Gouvernance',
+    'team.hero_subtitle': 'Des leaders engagés au service du patrimoine Mandjara, unis par une vision commune de préservation et de transmission culturelle.',
+    'team.section_subtitle': 'Des leaders engagés au service du patrimoine Mandjara',
+    'team.coming_soon': 'Cette section sera complétée prochainement',
+
+    // Team Categories
+    'team.cat.parrains': 'Parrains',
+    'team.cat.parrains_sub': 'Personnalités de marque soutenant notre mission',
+    'team.cat.honneur': 'Membres d\'honneur',
+    'team.cat.honneur_sub': 'Reconnus pour leur contribution exceptionnelle',
+    'team.cat.conseil': 'Conseil d\'Administration',
+    'team.cat.conseil_sub': 'Direction stratégique et gouvernance de l\'organisation',
+    'team.cat.bureau': 'Bureau Exécutif',
+    'team.cat.bureau_sub': 'Coordination opérationnelle des activités',
+    'team.cat.representants': 'Représentants nationaux',
+    'team.cat.representants_sub': 'Ambassadeurs du patrimoine Mandjara à travers le monde',
+    'team.cat.sages': 'Comité des Sages',
+    'team.cat.sages_sub': 'Gardiens de la sagesse et de la tradition',
+
+    // Parrains Page
+    'team.parrains.coming_title': 'Section à venir',
+    'team.parrains.coming_desc': 'Les parrains de l\'International Mandjara Heritage seront présentés prochainement.',
   },
 
   en: {
@@ -510,6 +536,32 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.terms': 'Terms of Use',
     'footer.rights': 'All rights reserved.',
     'footer.tagline': 'Let\'s preserve our heritage together 🌍',
+
+    // Team Pages
+    'team.badge': 'Our Team',
+    'team.hero_title': 'Leadership &',
+    'team.hero_highlight': 'Governance',
+    'team.hero_subtitle': 'Committed leaders serving the Mandjara heritage, united by a shared vision of preservation and cultural transmission.',
+    'team.section_subtitle': 'Committed leaders serving the Mandjara heritage',
+    'team.coming_soon': 'This section will be completed soon',
+
+    // Team Categories
+    'team.cat.parrains': 'Patrons',
+    'team.cat.parrains_sub': 'Distinguished figures supporting our mission',
+    'team.cat.honneur': 'Honorary Members',
+    'team.cat.honneur_sub': 'Recognized for their outstanding contribution',
+    'team.cat.conseil': 'Board of Directors',
+    'team.cat.conseil_sub': 'Strategic direction and governance of the organization',
+    'team.cat.bureau': 'Executive Board',
+    'team.cat.bureau_sub': 'Operational coordination of activities',
+    'team.cat.representants': 'National Representatives',
+    'team.cat.representants_sub': 'Ambassadors of Mandjara heritage around the world',
+    'team.cat.sages': 'Council of Elders',
+    'team.cat.sages_sub': 'Guardians of wisdom and tradition',
+
+    // Parrains Page
+    'team.parrains.coming_title': 'Coming Soon',
+    'team.parrains.coming_desc': 'The patrons of International Mandjara Heritage will be presented soon.',
   },
 };
 

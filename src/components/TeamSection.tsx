@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Building2, Heart, Leaf, Users, Globe, HandHeart, MapPin, BookOpen, Languages, Crown, ScrollText, Stethoscope, Sparkles, GraduationCap, Briefcase, Plane, Palette, HeartPulse, Baby } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
 import persidePortrait from '@/assets/perside-portrait.png';
 import ncharePortrait from '@/assets/nchare-portrait.png';
@@ -378,6 +379,8 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
 };
 
 export const TeamSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="notre-equipe" className="py-24 bg-heritage-cream relative overflow-hidden">
       {/* Decorative elements */}
@@ -394,13 +397,13 @@ export const TeamSection = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 bg-heritage-gold/20 text-heritage-brown rounded-full text-sm font-medium mb-4">
-            Notre Équipe
+            {t('team.badge')}
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-heritage-brown mb-6">
-            Leadership & <span className="text-heritage-terracotta">Gouvernance</span>
+            {t('team.hero_title')} <span className="text-heritage-terracotta">{t('team.hero_highlight')}</span>
           </h2>
           <p className="text-heritage-brown/70 max-w-2xl mx-auto text-lg">
-            Des leaders engagés au service du patrimoine Mandjara
+            {t('team.section_subtitle')}
           </p>
         </motion.div>
 
