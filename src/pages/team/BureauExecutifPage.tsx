@@ -6,6 +6,7 @@ import { useLanguage, Language } from '@/contexts/LanguageContext';
 import lauretinePortrait from '@/assets/lauretine-portrait.jpg';
 import evelinePortrait from '@/assets/eveline-kinyuy-portrait.jpg';
 import aichetouPortrait from '@/assets/aichetou-portrait.png';
+import nathaliePortrait from '@/assets/nathalie-kouotou-portrait.jpg';
 
 const bureauData: Record<Language, TeamMember[]> = {
   fr: [
@@ -45,7 +46,7 @@ const bureauData: Record<Language, TeamMember[]> = {
     {
       name: "Nathalie Sandrine Kouotou",
       role: "Secrétaire Générale",
-      portrait: "",
+      portrait: nathaliePortrait,
       bio: [
         "Nathalie Sandrine Kouotou occupe le poste de Secrétaire Générale au sein du Bureau exécutif de l'International Mandjara Heritage. Elle contribue à la coordination administrative et organisationnelle des activités de l'organisation."
       ],
@@ -108,7 +109,7 @@ const bureauData: Record<Language, TeamMember[]> = {
     {
       name: "Nathalie Sandrine Kouotou",
       role: "Secretary General",
-      portrait: "",
+      portrait: nathaliePortrait,
       bio: [
         "Nathalie Sandrine Kouotou serves as Secretary General of the Executive Board of International Mandjara Heritage. She contributes to the administrative and organizational coordination of the organization's activities."
       ],
